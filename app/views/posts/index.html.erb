@@ -20,7 +20,7 @@
       <tr>
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= post.title %></td>
-        <td><%= post.text %></td>
+        <td><%= raw(post.text) %></td>
         <td><%= post.author %></td>
         <td><%=l post.created_at %></td>
         <td>
