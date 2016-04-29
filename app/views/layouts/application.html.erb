@@ -52,16 +52,51 @@
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
+          <ul class="nav pull-right">
+            <li class="dropdown" id="menuLogin">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+              <div class="dropdown-menu" style="padding:30px;">
+                <form class="form" id="formLogin">
+                  <input name="username" id="username" type="text" placeholder="Username">
+                  <input name="password" id="password" type="password" placeholder="Password"><br>
+                  <button type="button" id="btnLogin" class="btn">Login</button>
+                </form>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
+      <!-- <div class="row"> -->
+        <!--< class="col-lg-9"> -->
           <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
+    <!--  <div id="user_nav"> -->
+        <% if user_signed_in? %>
+          Signed in as <%= current_user.email %>. Not you?
+          <%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <!-- probamos otro código html para el navbar -->
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%#= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+        <!-- y hacemos lo mismo para logarnos -->
+            <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to 'Login', new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
+
+     <!-- </div> -->
+
+        <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>
+
+      </p>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
             <h3>Sidebar</h3>

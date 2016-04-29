@@ -13,11 +13,14 @@ end
 
 #gem 'carrierwave', '0.11.0'
 
+# WYSIWYG
+gem 'ckeditor', '4.1.6'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-gem 'font-awesome-rails', '~> 4.6.1.0'
 
-gem 'ckeditor', '4.1.6'
+#Authentication gem
+gem 'devise', '4.0.1'
+gem 'font-awesome-rails', '~> 4.6.1.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
