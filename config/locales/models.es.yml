@@ -1,0 +1,76 @@
+es:
+  activerecord:
+    models:
+      user:
+        one: 'Usuario'
+        other: 'Usuarios'
+      post:
+        one: 'Post'
+        other: 'Posts'
+
+    attributes:
+      user:
+         user_id: 'Usuario'
+         email: 'email'
+         password: 'contraseña'
+
+      post:
+         nombre: 'Nombre'
+         title: 'título'
+         text: 'texto'
+         author: 'autor'
+
+
+#### Gestión de mensajes de ERRORES
+
+    errors:
+      messages:
+        record_invalid: "registro no válido"
+
+        accepted: debe ser aceptado
+        blank: no puede estar en blanco
+        present: debe estar en blanco
+        confirmation: no coincide
+        empty: no puede estar vacío
+        equal_to: debe ser igual a %{count}
+        even: debe ser par
+        exclusion: está reservado
+        greater_than: debe ser mayor que %{count}
+        greater_than_or_equal_to: debe ser mayor que o igual a %{count}
+        inclusion: no está incluido en la lista
+        invalid: no es válido
+        less_than: debe ser menor que %{count}
+        less_than_or_equal_to: debe ser menor que o igual a %{count}
+        model_invalid: "La validación falló: %{errors}"
+        not_a_number: no es un número
+        not_an_integer: debe ser un entero
+        odd: debe ser impar
+        required: debe existir
+        taken: debe ser único
+        too_long:
+          one: "es demasiado largo (1 carácter máximo)"
+          other: "es demasiado largo (%{count} caracteres máximo)"
+        too_short:
+          one: "es demasiado corto (1 carácter mínimo)"
+          other: "es demasiado corto (%{count} caracteres mínimo)"
+        wrong_length:
+          one: "no tiene la longitud correcta (1 carácter exactos)"
+          other: "no tiene la longitud correcta (%{count} caracteres exactos)"
+        other_than: debe ser distinto de %{count}
+
+        format: "no está en el formato correcto"
+        telephone_format: &telephone_format "no está en el formato correcto. Ej: +3462613843"
+        zip_format: &zip_format "no está en el formato correcto. Ej: 12345"
+        date_format: &date_format "no está en el formato correcto. Ej: dd/mm/aaaa"
+        float_format: &float_format "no está en el formato correcto. Ej: 1.7"
+        email_format: &email_format "no está en el formato correcto. Ej: usuario@dominio.es"
+        pass_format: &pass_format "demasiado corta. Al menos 8 caracteres"
+        postal_code_format: &postal_code_format "no está en el formato correcto. Ej: 23140"
+
+#      models:
+#        user:
+#          attributes:
+
+#        post:
+#          attributes:
+

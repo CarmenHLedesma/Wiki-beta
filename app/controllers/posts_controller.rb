@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  #def mis_posts
+   # @posts = current_user.posts
+  #end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -25,6 +29,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+
+    # añadimos aquí el current user y no en el index para que sea el usuario
+    # autenticado el que al crear el post vea todas sus creaciones. Si lo hiciéramos en
+    # el index sólo veríamos los posts del user y no los de todos los usuarios
+    @posts.user = current_user
 
     respond_to do |format|
       if @post.save

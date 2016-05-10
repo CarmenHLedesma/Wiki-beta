@@ -1,7 +1,6 @@
 <%- model_class = Post -%>
 <div class="page-header">
-  <!-- Comento este h1 para poder poner el de 'Bienvenido a Wiki'
-  <h1><%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>-->
+  <h1><%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
   <h1>Bienvenido a Rails Wiki</h1>
 </div>
 <table class="table table-striped">
@@ -10,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:text) %></th>
-      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -21,7 +20,7 @@
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= post.title %></td>
         <td><%= raw(post.text) %></td>
-        <td><%= post.author %></td>
+        <td><%= post.user_id %></td>
         <td><%=l post.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -40,6 +39,3 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
             :class => 'btn btn-primary' %>
-
-
-

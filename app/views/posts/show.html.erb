@@ -8,8 +8,8 @@
   <dd><%= @post.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
   <dd><%= @post.text %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:author) %>:</strong></dt>
-  <dd><%= @post.author %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @post.user_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
