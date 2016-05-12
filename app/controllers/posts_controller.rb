@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @users = User.all
   end
 
   #def mis_posts
@@ -16,13 +17,17 @@ class PostsController < ApplicationController
   def show
   end
 
+  # añadimos user a nuestro controller (no es necesario crear un controlador nuevo con user)
+  # para poder añadir los select users en la vista
   # GET /posts/new
   def new
     @post = Post.new
+    @users = User.all
   end
 
   # GET /posts/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /posts
@@ -78,6 +83,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :author)
+      params.require(:post).permit(:title, :text, :user_id)
     end
 end

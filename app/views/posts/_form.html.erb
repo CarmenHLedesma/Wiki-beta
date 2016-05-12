@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :title, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :title, :class => 'form-control' %>
+      <%= f.text_field :title, :class => 'form-control', :placeholder=>"Introduce un valir" %>
     </div>
     <%=f.error_span(:title) %>
   </div>
@@ -29,21 +29,23 @@
     </div>
     <%=f.error_span(:text) %>
   </div>
+  <!-- Hacemos un collection_select para poder tener un desplegable con users a seleccionar
+    (en este caso seleccionaremos por email). Lo que el show nos devolverá será la id del
+    user que hemos seleccionado -->
   <div class="form-group">
     <%= f.label :user_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :user_id, :class => 'form-control' %>
+      <%= f.collection_select :user_id, @users, :id, :email, :class => 'form-control select-search' %>
+      <%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
+      <% f.error_span(:user_id) %>
     </div>
-    <%=f.error_span(:user_id) %>
   </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                posts_path, :class => 'btn btn-default' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), posts_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
 <% end %>
-
