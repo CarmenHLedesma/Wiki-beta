@@ -39,3 +39,14 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
             :class => 'btn btn-primary' %>
+
+<!-- Añadimos código Javascript para nuestros select en index con select2 -->
+
+<% content_for :js do %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            prettyPrint();
+            $('select#simple-example').select2();
+        });
+    </script>
+<% end %>
