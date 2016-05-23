@@ -15,6 +15,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    post = @post
+    while post.parent
+      navigation_add post.parent.title, post_path(post.parent)
+      post = post.parent
+    end
   end
 
   # añadimos user a nuestro controller (no es necesario crear un controlador nuevo con user)
@@ -38,7 +43,7 @@ class PostsController < ApplicationController
     # añadimos aquí el current user y no en el index para que sea el usuario
     # autenticado el que al crear el post vea todas sus creaciones. Si lo hiciéramos en
     # el index sólo veríamos los posts del user y no los de todos los usuarios
-    @posts.user = current_user
+    # @posts.user = current_user
 
     respond_to do |format|
       if @post.save

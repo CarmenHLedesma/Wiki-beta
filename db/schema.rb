@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509080355) do
+ActiveRecord::Schema.define(version: 20160523133030) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -32,12 +32,13 @@ ActiveRecord::Schema.define(version: 20160509080355) do
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "text",       limit: 65535
-    t.string   "author",     limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "user_id",    limit: 4
+    t.integer  "parent_id",  limit: 4
   end
 
+  add_index "posts", ["parent_id"], name: "fk_rails_3eb11ec3aa", using: :btree
   add_index "posts", ["user_id"], name: "fk_rails_5b5ddfd518", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -58,5 +59,6 @@ ActiveRecord::Schema.define(version: 20160509080355) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "posts", "posts", column: "parent_id"
   add_foreign_key "posts", "users"
 end
