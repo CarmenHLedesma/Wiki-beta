@@ -48,12 +48,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Wiki</a>
+      <a class="navbar-brand" href="posts#index">Wiki</a>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Link1", "/path1"  %></li>
-          <li><%= link_to "Link2", "/path2"  %></li>
-          <li><%= link_to "Link3", "/path3"  %></li>
+          <li><%= link_to "Entradas", "/path1"  %></li>
+          <li><%= link_to "Sección nueva", "/path2"  %></li>
+          <li><%= link_to "Crear subtema", "/path3"  %></li>
         </ul>
         <p class='navbar-text pull-right'>
           <% if user_signed_in? %>
@@ -68,6 +68,7 @@
     </div>
   </div>
 </header>
+<%= render_navigation %>
   <%= yield %>
 <!-- Javascripts
     ================================================== -->

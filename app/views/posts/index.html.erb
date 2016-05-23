@@ -1,4 +1,8 @@
 <%- model_class = Post -%>
+
+<% content_for :title, 'wiki-beta' %>
+<% navigation_add @posts, '#' %>
+
 <div class="page-header">
   <h1><%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
   <h1>Bienvenido a Rails Wiki</h1>
@@ -23,6 +27,8 @@
         <td><%= post.user_id %></td>
         <td><%=l post.created_at %></td>
         <td>
+          <%#= link_to t('.show', :default => t("helpers.links.show")),
+                      posts_path(post), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -28,3 +28,15 @@ es:
       destroy: "Eliminar"
       confirm: "Confirmar"
       new: "Nuevo"
+    form:
+      cancel: "Cancelar"
+    edit:
+      title: "Título"
+    new:
+      title: "Título"
+    show:
+      title: "Título"
+      back: "Volver"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirm: "Confirmar"
