@@ -51,9 +51,9 @@
       <a class="navbar-brand" href="posts#index">Wiki</a>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Entradas", "/path1"  %></li>
-          <li><%= link_to "Sección nueva", "/path2"  %></li>
-          <li><%= link_to "Crear subtema", "/path3"  %></li>
+          <li><%= link_to "Entradas", "posts#index"  %></li>
+          <li><%= link_to "Sección nueva", "posts#index"  %></li>
+          <li><%= link_to "Crear subtema", "posts#index"  %></li>
         </ul>
         <p class='navbar-text pull-right'>
           <% if user_signed_in? %>

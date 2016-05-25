@@ -24,6 +24,7 @@ en:
   posts:
     index:
       actions: "Actions"
+      show: "Show"
       edit: "Edit"
       destroy: "Destroy"
       confirm: "Confirm"
@@ -33,6 +34,8 @@ en:
     edit:
       title: "Title"
     new:
+      title: "Title"
+    new_child:
       title: "Title"
     show:
       title: "Title"

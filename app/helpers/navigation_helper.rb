@@ -8,6 +8,6 @@ module NavigationHelper
   end
 
   def render_navigation
-    render :partial => 'navigation', :locals => { :nav => ensure_navigation }
+    render :partial => 'shared/navigation', :locals => { :nav => ensure_navigation }
   end
 end

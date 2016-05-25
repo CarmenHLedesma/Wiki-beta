@@ -1,0 +1,9 @@
+<ol class='breadcrumb'>
+  <% nav.each do |n| %>
+      <% unless n.equal? nav.last %>
+          <li><%= link_to n[:title], n[:url] %></li>
+      <% else %>
+          <li><%= n[:title] %></li>
+      <% end %>
+  <% end %>
+</ol>
