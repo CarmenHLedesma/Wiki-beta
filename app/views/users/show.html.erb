@@ -1,0 +1,17 @@
+<%- model_class = User -%>
+<% titulo = model_class.model_name.human.pluralize.titleize %>
+<% content_for :title, "Wiki-Beta > #{titulo} > #{@user.name}" %>
+<% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
+<% user_show_breadcrumb @user %>
+
+<div class="row profile">
+  <div class="col-sm-4 col-md-3">
+    <%#= image_tag(@user.avatar.url(:medium), class: 'avatar') %>
+    <h1><%= @user.email %></h1>
+    <ul>
+      <% unless @user.name.blank? %>
+          <li>Name: <%= @user.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

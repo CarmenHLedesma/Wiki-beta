@@ -10,4 +10,13 @@ devise :database_authenticatable,
   :trackable,
   :validatable
 
+  def full_name
+    if self.name.blank?
+      self.email
+    else
+      self.name
+    end
+  end
+
+
 end

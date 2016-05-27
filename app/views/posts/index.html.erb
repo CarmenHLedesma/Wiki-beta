@@ -13,7 +13,7 @@
     <th><% model_class.human_attribute_name(:id) %></th>
     <th><% model_class.human_attribute_name(:title) %></th>
     <th><% model_class.human_attribute_name(:text) %></th>
-    <th><% model_class.human_attribute_name(:user_id) %></th>
+    <th><% model_class.human_attribute_name(:user) %></th>
     <th><% model_class.human_attribute_name(:created_at) %></th>
     <th><% t '.actions', :default => t("helpers.actions") %></th>
   </tr>
@@ -24,7 +24,14 @@
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= post.title %></td>
         <td><%= raw(post.text) %></td>
-        <td><%= post.user_id %></td>
+        <!-- <td><%#= post.user.name %></td>-->
+        <td><%= post.user.try( :name ) %></td>
+        <!-- este sería el equivalente en código al método try. Lo que hace es permitir que haya, en este caso,
+            un post sin user y que no salte error en el código. Aún así, no se debe abusar porque sería muy
+            complicado detectar el error en la aplicación -->
+        <!--<%# if post.user.present?
+             post.user.name
+             end %> -->
         <td><%=l post.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

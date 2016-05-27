@@ -33,12 +33,12 @@
     (en este caso seleccionaremos por email). Lo que el show nos devolverá será la id del
     user que hemos seleccionado -->
   <div class="form-group">
-    <%= f.label :user_id, :class => 'control-label col-lg-2' %>
+    <%= f.label :user, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%#= f.collection_select :user_id, @users, :id, :email, :class => 'form-control select-search' %>
       <%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
-      <%= select_tag 'users', options_from_collection_for_select(@users, 'id', 'email'), id: 'simple-example' %>
-      <% f.error_span(:user_id) %>
+      <%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
+      <% f.error_span(:user) %>
     </div>
   </div>
 

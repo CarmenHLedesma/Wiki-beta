@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: [:index, :show]
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts do
     get :new_child, on: :member
+    get :show_child, on: :member
   end
   root to: 'posts#index'
 

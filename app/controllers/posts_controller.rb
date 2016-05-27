@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     post = @post
-
   end
 
   # añadimos user a nuestro controller (no es necesario crear un controlador nuevo con user)
@@ -92,6 +91,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name)
+      params.require(:post).permit(:title, :text, :user_id, :parent_id)
     end
 end

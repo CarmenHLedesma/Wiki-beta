@@ -1,0 +1,22 @@
+<%- model_class = User -%>
+<!-- añade el título a la url y el breadcrumb en el header -->
+<% content_for :title, 'Wiki Rails Users' %>
+<% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
+
+<div class="container">
+  <div class="users row">
+    <ul>
+    <% @users.each do |user| %>
+      <li><%= user.email %></li>
+      <div class="panel panel-default">
+        <%= link_to user_path(user) do %>
+            <div class="panel-default">
+              <%#= image_tag(user.avatar.url(:medium)) %>
+              <p><%= user.full_name %></p>
+            </div>
+        <% end %>
+      </div>
+    <% end %>
+    </ul>
+  </div>
+</div>
