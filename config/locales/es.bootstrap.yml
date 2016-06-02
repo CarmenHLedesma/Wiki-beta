@@ -6,7 +6,7 @@ es:
     application:
       root: "Index"
     pages:
-      pages: "Pages"
+      pages: "Páginas"
   helpers:
     actions: "Actions"
     links:

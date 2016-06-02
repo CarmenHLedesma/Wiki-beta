@@ -1,15 +1,7 @@
 <%- model_class = User -%>
-<% titulo = model_class.model_name.human.pluralize.titleize %>
-<% content_for :title, "Wiki-Beta > #{titulo} > #{@user.name}" %>
-<% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
-<% user_show_breadcrumb @user %>
+<% content_for :title, 'Wiki Rails Users' %>
+<% navigation_add model_class.model_name.human.pluralize.titleize, users_path  %>
+<% navigation_add @user.name, user_path %>
 
-<div class="col-sm-4 col-md-3">
-<label><%= @user.email %></label>
-<br>
-<label>
-  <% unless @user.name.blank? %>
-      <li>Name: <%= @user.name %></li>
-  <% end %>
-</label>
-</div>
+
+
