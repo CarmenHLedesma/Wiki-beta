@@ -46,14 +46,14 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+    <!--<span class="icon-bar"></span>-->
       </button>
       <a class="navbar-brand" href=<%= root_path %> >Wiki</a>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Entradas", "posts#index"  %></li>
-          <li><%= link_to "Sección nueva", "posts#index"  %></li>
-          <li><%= link_to "Crear subtema", "posts#index"  %></li>
+          <li><%= link_to "Entradas", 'posts#index' %></li>
+          <li><%= link_to "Sección nueva", 'posts/new' %></li>
+          <li><%#= link_to "Crear subtema", "posts#index"  %></li>
         </ul>
         <p class='navbar-text pull-right'>
           <% if user_signed_in? %>

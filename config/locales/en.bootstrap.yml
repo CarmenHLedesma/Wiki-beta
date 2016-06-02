@@ -17,6 +17,7 @@ en:
       show: "Show"
       new: "New"
       edit: "Edit"
+      create_subtheme: "Create Subtheme"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"

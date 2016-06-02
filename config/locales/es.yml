@@ -40,7 +40,5 @@ es:
     show:
       title: "Título"
       back: "Volver"
-      edit: "Editar"
-      destroy: "Eliminar"
-      confirm: "Confirmar"
       subtheme: "Subtemas"
+

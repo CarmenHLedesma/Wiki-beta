@@ -40,7 +40,5 @@ en:
     show:
       title: "Title"
       back: "Back"
-      edit: "Edit"
-      destroy: "Destroy"
-      confirm: "Confirm"
       subtheme: "Subtheme"
+

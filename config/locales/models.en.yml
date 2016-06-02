@@ -1,23 +1,23 @@
-es:
+en:
   activerecord:
     models:
       user:
-        one: 'Usuario'
-        other: 'Usuarios'
+        one: 'User'
+        other: 'Users'
       post:
         one: 'Post'
         other: 'Posts'
     attributes:
       user:
-        user_id: 'Usuario'
+        user_id: 'User'
         email: 'email'
-        password: 'contraseña'
-        nombre: 'Nombre'
+        password: 'Password'
+        name: 'Name'
       post:
-        #nombre: 'Nombre'
-        title: 'Título'
-        text: 'Texto'
-        author: 'Autor'
+        #name: 'Name'
+        title: 'Title'
+        text: 'Text'
+        author: 'Author'
       subtheme:
         user:
           name: "Nombre"
@@ -72,10 +72,5 @@ es:
         pass_format: &pass_format "demasiado corta. Al menos 8 caracteres"
         postal_code_format: &postal_code_format "no está en el formato correcto. Ej: 23140"
 
-#      models:
-#        user:
-#          attributes:
 
-#        post:
-#          attributes:
 

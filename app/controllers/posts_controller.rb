@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    post = @post
+
   end
 
   # añadimos user a nuestro controller (no es necesario crear un controlador nuevo con user)
@@ -30,7 +30,16 @@ class PostsController < ApplicationController
     @post_parent = @post
     @post = Post.new
     @post.parent_id = @post_parent.id
+    @post.user_id = @post_parent.user_id
     @users = User.all
+  end
+
+  def show_child
+    @post_child = @post
+    @post = Post.find(params[:id])
+    #@post.parent_id = @post_parent.id
+    #@users = User.all
+    render :show
   end
 
   # GET /posts/1/edit
@@ -48,11 +57,10 @@ class PostsController < ApplicationController
     # el index sólo veríamos los posts del user y no los de todos los usuarios
     # @posts.user = current_user
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
+    if @post.save
+      redirect_to :action =>'index'
+    else
+      respond_to do |format|
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -91,6 +99,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :user_id, :parent_id)
+      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name)
     end
 end

@@ -1,3 +1,8 @@
+<%- model_class = Post -%>
+<!-- añade el título a la url y el breadcrumb en el header -->
+<% content_for :title, 'wiki-beta' %>
+<% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
+
 <%= form_for @post, :html => { :class => "form-horizontal post" } do |f| %>
   <%= f.hidden_field :parent_id %>
   <% if @post.errors.any? %>
@@ -25,7 +30,8 @@
   <div class="form-group">
     <%= f.label :text, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.cktext_area :text, :class => 'form-control' %>
+      <%#= f.text_area :text, :class => 'ckeditor' %>
+      <%= f.cktext_area raw(:text), :class => 'form-control' %>
     </div>
     <%=f.error_span(:text) %>
   </div>
@@ -35,7 +41,7 @@
   <div class="form-group">
     <%= f.label :user, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%#= f.collection_select :user_id, @users, :id, :email, :class => 'form-control select-search' %>
+      <%= f.collection_select :user_id, @users, :id, :name, :class => 'form-control select-search' %>
       <%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
       <%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
       <% f.error_span(:user) %>

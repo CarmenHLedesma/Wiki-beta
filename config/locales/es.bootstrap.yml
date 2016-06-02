@@ -14,8 +14,9 @@ es:
       cancel: "Cancelar"
       confirm: "Confirmar"
       destroy: "Borrar"
-      show: "Show"
+      show: "Mostrar"
       new: "Nuevo"
+      create_subtheme: "Crear Subtema"
       edit: "Editar"
     titles:
       edit: "Editar %{model}"

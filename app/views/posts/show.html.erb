@@ -5,20 +5,24 @@
 <% post_show_breadcrumb @post %>
 <% navigation_add @post.title, post_path %>
 
-<div class="page-header">
-  <h1><%= @post.title %></h1>
-</div>
-<div class="page-body">
-  <p><%= raw @post.text %></p>
-</div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:user) %>:</strong></dt>
-  <dd><%= @post.user %></dd>
-</dl>
+<div class="page-body">
+  <h1>Post Padre</h1>
+  <label><%= t('activerecord.attributes.post.title') %>:</label>
+  <label><%= @post.title %></label>
+  <br>
+  <label><%= t('activerecord.attributes.post.text') %>:</label>
+  <label><%= raw @post.text %></label>
+  <br>
+  <label><%= t('activerecord.attributes.user.name') %>:</label>
+  <label><%= @post.user.name %></label>
+</div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
             posts_path, :class => 'btn btn-default'  %>
+<%= link_to t('.create_subtheme', :default => t("helpers.links.create_subtheme")),
+            new_child_post_path(@post),
+            :class => 'btn btn-primary' %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
             edit_post_path(@post), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -27,13 +31,22 @@
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
             :class => 'btn btn-danger' %>
 
+<!-- ponemos la condición para saber si se trata de padre o hijo y así mostrar una cosa u otra -->
 <div>
-  <h2> <%= t( '.subtheme' ) %> </h2>
-  <%= @post.children.each do |subtheme| %>
-      <%= link_to subtheme.title, post_path(subtheme) %>
+  <% if @post.parent_id == nil %>
+      <% @post.children.each do |subtheme| %>
+      <div class="subtheme body">
+          <h3>Post hijo</h3>
+          <label><%= t('activerecord.attributes.post.title') %>:</label>
+          <label><%= subtheme.title %></label>
+          </br>
+          <label><%= t('activerecord.attributes.post.text') %>:</label>
+          <label><%= raw(subtheme.text) %></label>
+          </br>
+          <label><%= t('activerecord.attributes.user.name') %>:</label>
+          <label><%= subtheme.user.name %></label>
+      </div>
+      <% end %>
   <% end %>
 </div>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_child_post_path(@post),
-            :class => 'btn btn-primary' %>

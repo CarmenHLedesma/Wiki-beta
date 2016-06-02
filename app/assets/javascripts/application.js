@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
+//  require turbolinks => hemos deshabilitado esta opción porque entraba en conflicto con el editor de texto en 'new' y 'editar'
 //= require ckeditor/init
 //= require_tree .
