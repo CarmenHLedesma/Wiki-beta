@@ -13,6 +13,7 @@ en:
         email: 'email'
         password: 'Password'
         name: 'Name'
+        created_at: 'Created_at'
       post:
         #name: 'Name'
         title: 'Title'
@@ -20,9 +21,9 @@ en:
         author: 'Author'
       subtheme:
         user:
-          name: "Nombre"
+          name: "Name"
         post:
-          title: "Título"
+          title: "Títle"
           text: "Text"
 
 

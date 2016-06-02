@@ -1,8 +1,8 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 es:
-  user_index: "Index"
   devise:
+    user_index: "Index"
     confirmations:
       confirmed: "Tu email ha sido confirmado."
       send_instructions: "Recibirás un email con instrucciones de como confirmar un dirección email en pocos minutos."

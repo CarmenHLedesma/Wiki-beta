@@ -51,8 +51,10 @@
       <a class="navbar-brand" href=<%= root_path %> >Wiki</a>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Entradas", 'posts#index' %></li>
-          <li><%= link_to "Sección nueva", 'posts/new' %></li>
+          <!-- En el navbar es recomendable añadir el path en lugar de la ruta 'posts#index'. Esta sefunda opción
+               concatenaría las rutas en la url y daría error.-->
+          <li><%= link_to "Entradas", posts_path %></li>
+          <li><%= link_to "Sección nueva", new_post_path %></li>
           <li><%#= link_to "Crear subtema", "posts#index"  %></li>
         </ul>
         <p class='navbar-text pull-right'>

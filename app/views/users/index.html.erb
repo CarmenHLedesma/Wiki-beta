@@ -3,20 +3,29 @@
 <% content_for :title, 'Wiki Rails Users' %>
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
-<div class="container">
-  <div class="users row">
-    <ul>
-    <% @users.each do |user| %>
-      <li><%= user.email %></li>
-      <div class="panel panel-default">
-        <%= link_to user_path(user) do %>
-            <div class="panel-default">
-              <%#= image_tag(user.avatar.url(:medium)) %>
-              <p><%= user.full_name %></p>
-            </div>
-        <% end %>
-      </div>
-    <% end %>
-    </ul>
-  </div>
+<div class="page-header">
+  <h1>Usuarios registrados</h1>
 </div>
+<table class="table-responsive">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th><%= model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:email) %></th>
+    <th><%= model_class.human_attribute_name(:created_at) %></th>
+    <th><% t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.created_at %></td>
+      <td><%= link_to t('.show', :default => t("helpers.links.show")),
+                      user_path(user), :class => 'btn btn-default btn-xs' %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>

@@ -12,7 +12,8 @@ es:
         user_id: 'Usuario'
         email: 'email'
         password: 'contraseña'
-        nombre: 'Nombre'
+        name: 'Nombre'
+        created_at: 'Fecha de creación'
       post:
         #nombre: 'Nombre'
         title: 'Título'
@@ -72,10 +73,5 @@ es:
         pass_format: &pass_format "demasiado corta. Al menos 8 caracteres"
         postal_code_format: &postal_code_format "no está en el formato correcto. Ej: 23140"
 
-#      models:
-#        user:
-#          attributes:
 
-#        post:
-#          attributes:
 
