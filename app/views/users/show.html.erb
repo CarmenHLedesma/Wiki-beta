@@ -3,5 +3,22 @@
 <% navigation_add model_class.model_name.human.pluralize.titleize, users_path  %>
 <% navigation_add @user.name, user_path %>
 
+<div class="page-body">
+    <h1>Perfil de usuario</h1>
+    <label><%= t('activerecord.attributes.user.avatar') %>:</label>
+    <img><%= @user.avatar %></img>
+    <br>
+    <label><%= t('activerecord.attributes.user.name') %>:</label>
+    <label><%= @user.name %></label>
+    <br>
+    <label><%= t('activerecord.attributes.user.email') %>:</label>
+    <label><%= @user.email %></label>
+    <br>
+    <label><%= t('activerecord.attributes.user.created_at') %>:</label>
+    <label><%= @user.created_at %></label>
+</div>
 
-
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_user_registration_path(@user), :class => 'btn btn-default' %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_user_registration_path(@user), :class => 'btn btn-default' %>
