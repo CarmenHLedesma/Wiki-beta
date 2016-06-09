@@ -16,10 +16,11 @@ es:
         created_at: 'Fecha de creación'
         avatar: 'Avatar'
       post:
-        #nombre: 'Nombre'
+        nombre: 'Nombre'
         title: 'Título'
         text: 'Texto'
         author: 'Autor'
+        document: 'Documento adjunto'
       subtheme:
         user:
           name: "Nombre"

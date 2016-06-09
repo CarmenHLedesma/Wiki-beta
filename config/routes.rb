@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts do
     get :new_child, on: :member
     get :show_child, on: :member
+    get :document_download, on: :member
   end
   root to: 'posts#index'
 

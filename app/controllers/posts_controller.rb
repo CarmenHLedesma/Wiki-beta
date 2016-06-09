@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @users = User.all
     # añadimos aquí el current user y no en el index para que sea el usuario
     # autenticado el que al crear el post vea todas sus creaciones. Si lo hiciéramos en
     # el index sólo veríamos los posts del user y no los de todos los usuarios
@@ -91,6 +91,30 @@ class PostsController < ApplicationController
     end
   end
 
+  # Dentro de paperclip vemos que en la ruta public/system/posts/documents se guardan los documentos a descargar
+  # creando una subcarpeta con la id del post al que pertenece. Vemos además, que aparecen con una numeración
+  # de 000. Para evitar errores vamos a creamos las variables longitud_id y las compararemos con el id de post que le pasamos
+  # A continuación creamos la variable carpeta y la comparamos con el número de 0 de la misma. Así obligaremos
+  # que se vayan rellenando las carpetas de los documentos que pertenecen a post(id).
+  def document_download
+    @post = Post.find(params[:id])
+    file_path = @post.document_file_name
+    if !file_path.nil?
+      longitud_id = @post.id.to_s.size
+      if longitud_id == 1
+        carpeta = "00#{@post.id}"
+      elsif longitud_id == 2
+        carpeta = "0#{@post.id}"
+      else
+        carpeta = @post.id
+      end
+
+      send_file "#{Rails.root}/public/system/posts/documents/000/000/#{carpeta}/original/#{file_path}", :x_sendfile => true
+    else
+      redirect_to posts_url
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -99,6 +123,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name)
+      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :document, :file)
     end
 end

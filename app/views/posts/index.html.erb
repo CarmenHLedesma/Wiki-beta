@@ -33,6 +33,7 @@
              post.user.name
              end %> -->
         <td><%=l post.created_at %></td>
+        <td><%= post.document_file_name %></td>
         <td>
           <% if post.parent_id == nil %>
             <%= link_to t('.show', :default => t("helpers.links.show")),

@@ -16,6 +16,10 @@
   <br>
   <label><%= t('activerecord.attributes.user.name') %>:</label>
   <label><%= @post.user.name %></label>
+  <br>
+  <label><%= t('activerecord.attributes.post.document') %></label>
+  <a href="#"><%= @post.document_file_name %></a>
+    <%= link_to 'Descarga', document_download_post_path(@post), :class => 'btn btn-default' %>
 </div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

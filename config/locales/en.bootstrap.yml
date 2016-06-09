@@ -10,6 +10,7 @@ en:
   helpers:
     actions: "Actions"
     links:
+      back_index: "Back to index"
       back: "Back"
       cancel: "Cancel"
       confirm: "Are you sure?"
@@ -18,6 +19,7 @@ en:
       new: "New"
       edit: "Edit"
       create_subtheme: "Create Subtheme"
+      download: "Download"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"

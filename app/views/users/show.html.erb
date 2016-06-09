@@ -6,7 +6,7 @@
 <div class="page-body">
     <h1>Perfil de usuario</h1>
     <label><%= t('activerecord.attributes.user.avatar') %>:</label>
-    <img><%= @user.avatar %></img>
+    <label> <%= image_tag(current_user.avatar.url(:thumb), :class => 'round-image-50') %></label>
     <br>
     <label><%= t('activerecord.attributes.user.name') %>:</label>
     <label><%= @user.name %></label>
@@ -20,5 +20,5 @@
 
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
             edit_user_registration_path(@user), :class => 'btn btn-default' %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-            edit_user_registration_path(@user), :class => 'btn btn-default' %>
+<%= link_to t('.back_index', :default => t("helpers.links.back_index")),
+            posts_path(@post), :class => 'btn btn-default' %>

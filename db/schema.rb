@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603120719) do
+ActiveRecord::Schema.define(version: 20160608110354) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -30,12 +30,16 @@ ActiveRecord::Schema.define(version: 20160603120719) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "text",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "user_id",    limit: 4
-    t.integer  "parent_id",  limit: 4
+    t.string   "title",                 limit: 255
+    t.text     "text",                  limit: 65535
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "user_id",               limit: 4
+    t.integer  "parent_id",             limit: 4
+    t.string   "document_file_name",    limit: 255
+    t.string   "document_content_type", limit: 255
+    t.integer  "document_file_size",    limit: 4
+    t.datetime "document_updated_at"
   end
 
   add_index "posts", ["parent_id"], name: "fk_rails_3eb11ec3aa", using: :btree
