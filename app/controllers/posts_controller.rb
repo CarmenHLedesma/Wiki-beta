@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :new_child]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :new_child, :document_download, :pdf_read ]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
     @users = User.all
+    @category = Category.all
   end
 
   #def mis_posts
@@ -52,6 +53,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @users = User.all
+    @category = Category.all
     # añadimos aquí el current user y no en el index para que sea el usuario
     # autenticado el que al crear el post vea todas sus creaciones. Si lo hiciéramos en
     # el index sólo veríamos los posts del user y no los de todos los usuarios
@@ -97,7 +99,6 @@ class PostsController < ApplicationController
   # A continuación creamos la variable carpeta y la comparamos con el número de 0 de la misma. Así obligaremos
   # que se vayan rellenando las carpetas de los documentos que pertenecen a post(id).
   def document_download
-    @post = Post.find(params[:id])
     file_path = @post.document_file_name
     if !file_path.nil?
       longitud_id = @post.id.to_s.size
@@ -123,6 +124,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :document, :file)
+      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :document, :file, :tag_list)
     end
 end

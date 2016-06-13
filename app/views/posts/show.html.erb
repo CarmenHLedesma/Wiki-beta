@@ -8,6 +8,14 @@
 
 <div class="page-body">
   <h1>Post Padre</h1>
+
+  <label><%= t('activerecord.attributes.post_category.category') %>:</label>
+  <label>
+    <% @post.categories.to_a.each do |a| %>
+        <%= a.name %>
+    <% end %>
+  </label>
+  <br>
   <label><%= t('activerecord.attributes.post.title') %>:</label>
   <label><%= @post.title %></label>
   <br>
@@ -18,7 +26,7 @@
   <label><%= @post.user.name %></label>
   <br>
   <label><%= t('activerecord.attributes.post.document') %></label>
-  <a href="#"><%= @post.document_file_name %></a>
+  <label><%= @post.document_file_name %></label>
     <%= link_to 'Descarga', document_download_post_path(@post), :class => 'btn btn-default' %>
 </div>
 

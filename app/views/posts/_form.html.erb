@@ -20,13 +20,28 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :title, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :title, :class => 'form-control', :placeholder=>"Introduce un valor" %>
+    <!-- Añadimos categorías a los posts -->
+    <div class="form-group">
+    <!--<%#= f.label :categories, :class => 'control-label col-lg-2' %>
+        <%#= f.label :categories, 'Categorías' %>
+      <div> Estas opciones las hemos probado antes y han funcionado, tanto con select2 como en collection_select
+      <%#= f.collection_select :categories, @post.categories, :id, :name, :multiple => true %>
+      <%#= f.collection_select :categories, Category.all, :id, :name, {}, {class: 'select2 form-control', multiple: true} %>
+      <%#= f.collection_select(:categories, @category, :id, :name, {:prompt => "Selecciona las categorías"}, {:multiple => true}) %>
+      </div>-->
+      <!--Agregamos el código propio de la gema acts_as_taggable -->
+
+    <%= f.text_field :tag_list %>
     </div>
+
+    <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+          <%= f.text_field :title, :class => 'form-control', :placeholder=>"Introduce un valor" %>
+        </div>
     <%=f.error_span(:title) %>
-  </div>
+    </div>
+
   <div class="form-group">
     <%= f.label :text, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Wiki.iml" filepath="$PROJECT_DIR$/.idea/Wiki.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Wiki-beta.iml" filepath="$PROJECT_DIR$/.idea/Wiki-beta.iml" />
     </modules>
   </component>
 </project>

@@ -7,6 +7,12 @@ en:
       post:
         one: 'Post'
         other: 'Posts'
+      category:
+        one: 'Category'
+        other: 'Categoríes'
+      post_category:
+        one: 'Categoría del post'
+        other: 'Categorías del post'
     attributes:
       user:
         user_id: 'User'
@@ -21,6 +27,10 @@ en:
         text: 'Text'
         author: 'Author'
         document: 'Document Attachment'
+      category:
+        name: 'Name'
+      post_category:
+        category: 'Category'
       subtheme:
         user:
           name: "Name"
