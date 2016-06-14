@@ -16,4 +16,3 @@
 //  require turbolinks => hemos deshabilitado esta opción porque entraba en conflicto con el editor de texto en 'new' y 'editar'
 //= require ckeditor/init
 //= require_tree .
-//= require jquery_nested_form

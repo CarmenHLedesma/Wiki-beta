@@ -27,6 +27,7 @@ en:
         text: 'Text'
         author: 'Author'
         document: 'Document Attachment'
+        tag: 'Tag'
       category:
         name: 'Name'
       post_category:

@@ -860,7 +860,7 @@
 
             if ($.isArray(opts.element.data("select2Tags"))) {
                 if ("tags" in opts) {
-                    throw "tags specified as both an attribute 'data-select2-tags' and in options of Select2 " + opts.element.attr("id");
+                    throw "acts_as_taggable_on specified as both an attribute 'data-select2-acts_as_taggable_on' and in options of Select2 " + opts.element.attr("id");
                 }
                 opts.tags=opts.element.data("select2Tags");
             }

@@ -197,7 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
+  acts-as-taggable-on (= 3.5.0)
   byebug
   ckeditor (= 4.1.6)
   coffee-rails (~> 4.1.0)

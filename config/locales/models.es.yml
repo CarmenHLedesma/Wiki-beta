@@ -27,6 +27,7 @@ es:
         text: 'Texto'
         author: 'Autor'
         document: 'Documento adjunto'
+        tag: 'Tag'
       category:
         name: 'Nombre'
       post_category:

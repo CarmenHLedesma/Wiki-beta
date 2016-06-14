@@ -8,13 +8,15 @@
 
 <div class="page-body">
   <h1>Post Padre</h1>
-
-  <label><%= t('activerecord.attributes.post_category.category') %>:</label>
+  <label><%= @post.tags %></label>
+<!-- Comentamos lo referente a category
+  <label><%#= t('activerecord.attributes.post_category.category') %>:</label>
   <label>
-    <% @post.categories.to_a.each do |a| %>
-        <%= a.name %>
-    <% end %>
+    <%# @post.categories.to_a.each do |a| %>
+        <%#= a.name %>
+    <%# end %>
   </label>
+  -->
   <br>
   <label><%= t('activerecord.attributes.post.title') %>:</label>
   <label><%= @post.title %></label>
@@ -22,12 +24,14 @@
   <label><%= t('activerecord.attributes.post.text') %>:</label>
   <label><%= raw @post.text %></label>
   <br>
-  <label><%= t('activerecord.attributes.user.name') %>:</label>
+  <label><%= t('activerecord.attributes.user.name') %></label>
   <label><%= @post.user.name %></label>
   <br>
-  <label><%= t('activerecord.attributes.post.document') %></label>
-  <label><%= @post.document_file_name %></label>
-    <%= link_to 'Descarga', document_download_post_path(@post), :class => 'btn btn-default' %>
+  <% if @post.document_file_name != nil %>
+      <label><%= t('activerecord.attributes.post.document') %></label>
+      <label><%= @post.document_file_name %></label>
+      <%= link_to 'Descarga', document_download_post_path(@post), :class => 'btn btn-default' %>
+  <% end %>
 </div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

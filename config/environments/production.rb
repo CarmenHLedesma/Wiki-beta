@@ -48,7 +48,7 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
-  # Prepend all log lines with the following tags.
+  # Prepend all log lines with the following acts_as_taggable_on.
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups.

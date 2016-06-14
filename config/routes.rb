@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+  root to: 'static#index'
+
   devise_for :users
   resources :users, only: [:index, :show]
+  resources :tags, only: [:index, :show]
+  resources :static
 
   mount Ckeditor::Engine => '/ckeditor'
+
   resources :posts do
     get :new_child, on: :member
     get :show_child, on: :member
     get :document_download, on: :member
   end
-  root to: 'posts#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
