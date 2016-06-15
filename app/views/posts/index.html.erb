@@ -11,7 +11,7 @@
   <thead>
   <tr>
     <th><% model_class.human_attribute_name(:id) %></th>
-    <th><% model_class.human_attribute_name(:tags) %></th>
+    <th><% model_class.human_attribute_name(:tag) %></th>
     <th><% model_class.human_attribute_name(:title) %></th>
     <th><% model_class.human_attribute_name(:text) %></th>
     <th><% model_class.human_attribute_name(:name) %></th>
@@ -23,7 +23,7 @@
   <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.id, post_path(post) %></td>
-        <td><%= post.tags %></td>
+        <td><%= post.tag_list %></td>
         <td><%= post.title %></td>
         <td><%= raw(post.text) %></td>
         <!-- <td><%#= post.user.name %></td>-->
