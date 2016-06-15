@@ -1,0 +1,5 @@
+<h3><%= @tag.name %></h3>
+<div><%= render @posts %></div>
+
+<%= link_to t('.back_index', :default => t("helpers.links.back_index")),
+            tags_path(@tag), :class => 'btn btn-default' %>
