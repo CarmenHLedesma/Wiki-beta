@@ -25,3 +25,8 @@ es:
       save: "Guardar %{model}"
       new: "Nuevo %{model}"
       delete: "Borrar %{model}"
+    tags:
+      edit: "Editar %{model}"
+      save: "Guardar %{model}"
+      new: "Nueva %{model}"
+      delete: "Borrar %{model}"

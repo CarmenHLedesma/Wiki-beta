@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:index, :show]
-  resources :tags, only: [:index, :show]
-  resources :static
+  resources :tags
+  resources :static,  only: [:index]
 
   mount Ckeditor::Engine => '/ckeditor'
 

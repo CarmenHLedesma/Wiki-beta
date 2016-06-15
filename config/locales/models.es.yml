@@ -7,6 +7,9 @@ es:
       post:
         one: 'Post'
         other: 'Posts'
+      tag:
+        one: 'Tag'
+        other: 'Tags'
       category:
         one: 'Categoría'
         other: 'Categorías'
@@ -27,7 +30,8 @@ es:
         text: 'Texto'
         author: 'Autor'
         document: 'Documento adjunto'
-        tag: 'Tag'
+      tag:
+        name: 'Nombre'
       category:
         name: 'Nombre'
       post_category:

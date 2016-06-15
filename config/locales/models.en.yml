@@ -7,6 +7,9 @@ en:
       post:
         one: 'Post'
         other: 'Posts'
+      tag:
+        one: 'Tag'
+        other: 'Tags'
       category:
         one: 'Category'
         other: 'Categoríes'
@@ -28,6 +31,8 @@ en:
         author: 'Author'
         document: 'Document Attachment'
         tag: 'Tag'
+      tag:
+        name: 'Name'
       category:
         name: 'Name'
       post_category:
