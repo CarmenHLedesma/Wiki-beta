@@ -16,7 +16,7 @@
 
  */
 
-/* NAVBAR */
+/* NAVBAR & POST INDEX */
 
 a.navbar-brand{
     font-size: 25px;
@@ -73,4 +73,29 @@ a.btn.btn-primary:hover {
     border: 2px solid;
     border-radius: 0px;
     text-color: #000;
+}
+
+/* POST SHOW */
+
+/*.breadcrumb{
+    margin-left: 40px;
+} */
+h1 {
+    margin-left: 40px;
+}
+
+div.post.body{
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+p.post.body-tag{
+    display: inline-block;
+}
+
+p.post.body-user{
+    display: inline-block;
 }
