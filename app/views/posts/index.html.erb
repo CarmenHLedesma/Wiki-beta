@@ -4,17 +4,17 @@
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
 <div class="page-header">
-  <h1><%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-  <h1>Bienvenido a Rails Wiki</h1>
+  #######################
 </div>
 <table class="table table-striped">
   <thead>
   <tr>
     <th><% model_class.human_attribute_name(:id) %></th>
-    <th><%= model_class.human_attribute_name(:tag) %></th>
     <th><%= model_class.human_attribute_name(:title) %></th>
+    <th><%= model_class.human_attribute_name(:tag) %></th>
     <th><%= model_class.human_attribute_name(:text) %></th>
     <th><% model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:document)%></th>
     <th><% model_class.human_attribute_name(:created_at) %></th>
     <th><% t '.actions', :default => t("helpers.actions") %></th>
   </tr>
@@ -23,19 +23,25 @@
   <% @posts.each do |post| %>
       <tr>
         <td><% link_to post.id, post_path(post) %></td>
-        <td><%= post.tag_list %></td>
         <td><%= post.title %></td>
-        <td><%= raw(post.text) %></td>
+        <td><%= post.tag_list %></td>
+        <td><% if post.text.length > 100 %>
+            <%= raw(post.text.slice(0,100)+ '...') %>
+          <% end %>
+        </td>
         <!-- <td><%#= post.user.name %></td>-->
-        <td><%= post.user.try(:name) %></td>
+        <td><% post.user.try(:name) %></td>
         <!-- este sería el equivalente en código al método try. Lo que hace es permitir que haya, en este caso,
             un post sin user y que no salte error en el código. Aún así, no se debe abusar porque sería muy
             complicado detectar el error en la aplicación -->
         <!--<%# if post.user.present?
              post.user.name
              end %> -->
-        <td><%=l post.created_at %></td>
-        <td><%= post.document_file_name %></td>
+        <td><% if post.document_file_name != nil %>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-download"></span></button></td>
+          <% end %>
+          <td><% l post.created_at %></td>
         <td>
           <% if post.parent_id == nil %>
             <%= link_to t('.show', :default => t("helpers.links.show")),
@@ -60,7 +66,7 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-default btn' %>
 
 <!-- Añadimos código Javascript para nuestros select en index con select2 -->
 

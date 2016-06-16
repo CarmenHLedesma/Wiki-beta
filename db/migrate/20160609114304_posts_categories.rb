@@ -8,3 +8,4 @@ class PostsCategories < ActiveRecord::Migration
   end
 end
 
+

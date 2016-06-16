@@ -1,7 +1,7 @@
 class AddUserIdToPosts < ActiveRecord::Migration
   def change
-    add_column :posts, :user_id, :integer
-    add_foreign_key :posts, :users, :user_id
+    change_column :posts, :user_id, :integer
+    add_foreign_key :posts, :users, column: 'user_id'
 
     #add_reference :posts, :user, foreign_key: true
 
