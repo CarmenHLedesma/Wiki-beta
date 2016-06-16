@@ -55,6 +55,12 @@ div.col-lg-12{
     text-align: center;
 }
 
+/*.table.table-striped {
+    padding: 8px;
+    margin-left: 40px;
+    margin-right: 40px;
+}*/
+
 .btn-primary {
     color: #fff;
     background-color: #f6f8f9;
@@ -63,6 +69,10 @@ div.col-lg-12{
 
 .btn-primary:hover {
     background-color: #f6f8f9;
+}
+
+a.btn.btn-default.btn.new {
+    margin: 40px;
 }
 
 a.btn.btn-primary:hover {
@@ -98,4 +108,9 @@ p.post.body-tag{
 
 p.post.body-user{
     display: inline-block;
+}
+
+div.form {
+    padding: 8px;
+    margin-left: -100px;
 }
