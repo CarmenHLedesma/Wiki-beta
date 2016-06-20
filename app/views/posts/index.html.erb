@@ -2,10 +2,11 @@
 <!-- añade el título a la url y el breadcrumb en el header -->
 <% content_for :title, 'wiki-beta' %>
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
-
+<!--
 <div class="page-header">
   #######################
 </div>
+-->
 <table class="table-responsive">
   <thead>
       <tr>
@@ -41,7 +42,7 @@
         <td><% if post.document_file_name != nil %>
             <button type="button" class="btn btn-default btn-xs">
               <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
-              <%= image_tag("glyphicons-63-paperclip.png", class: 'small-icon') %>
+              <%= image_tag("glyphicons-37-file.png", class: 'small-icon') %>
             </button></td>
           <% end %>
           <td><% l post.created_at %></td>

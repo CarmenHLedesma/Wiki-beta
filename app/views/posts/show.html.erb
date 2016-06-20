@@ -27,11 +27,12 @@
   <p class="post body-user"><%= @post.user.name %></p>
   <br>
   <% if @post.document_file_name != nil %>
-      <label><%= t('activerecord.attributes.post.document') %></label>
+      <label><%= t('activerecord.attributes.post.document') %>:</label>
       <label><%= @post.document_file_name %></label>
           <%= link_to document_download_post_path(@post) do %>
-            <button type="button" class="btn btn-default" aria-label="Left Align">
-                <span class="glyphicon glyphicon-download"></span></button>
+            <button type="button" class="btn btn-default btn-xs">
+                <%= image_tag("glyphicons-37-file.png") %>
+            </button>
       <% end %>
   <% end %>
   <br>
