@@ -6,18 +6,18 @@
 <div class="page-header">
   #######################
 </div>
-<table class="table table-striped">
+<table class="table-responsive">
   <thead>
-  <tr>
-    <th><% model_class.human_attribute_name(:id) %></th>
-    <th><%= model_class.human_attribute_name(:title) %></th>
-    <th><%= model_class.human_attribute_name(:tag) %></th>
-    <th><%= model_class.human_attribute_name(:text) %></th>
-    <th><% model_class.human_attribute_name(:name) %></th>
-    <th><%= model_class.human_attribute_name(:document)%></th>
-    <th><% model_class.human_attribute_name(:created_at) %></th>
-    <th><% t '.actions', :default => t("helpers.actions") %></th>
-  </tr>
+      <tr>
+        <th><% model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= model_class.human_attribute_name(:tag) %></th>
+        <th><%= model_class.human_attribute_name(:text) %></th>
+        <th><% model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:document)%></th>
+        <th><% model_class.human_attribute_name(:created_at) %></th>
+        <th><% t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
   </thead>
   <tbody>
   <% @posts.each do |post| %>
@@ -25,9 +25,10 @@
         <td><% link_to post.id, post_path(post) %></td>
         <td><%= post.title %></td>
         <td><%= post.tag_list %></td>
+        <!-- Limitamos el número de caracteres que vamos a mostrar en index text -->
         <td><% if post.text.length > 100 %>
-            <%= raw(post.text.slice(0,100)+ '...') %>
-          <% end %>
+                <%= raw(post.text.slice(0,100)+ '...') %>
+            <% end %>
         </td>
         <!-- <td><%#= post.user.name %></td>-->
         <td><% post.user.try(:name) %></td>
@@ -39,7 +40,9 @@
              end %> -->
         <td><% if post.document_file_name != nil %>
             <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
-            <span class="glyphicon glyphicon-download"></span></button></td>
+              <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
+                <%= image_tag("glyphicons-63-paperclip.png", class: 'small-icon') %>
+            </button></td>
           <% end %>
           <td><% l post.created_at %></td>
         <td>
@@ -61,7 +64,8 @@
 
           <%= link_to post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
              <button type="button" class="btn btn-default btn-xs">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
+             </button>
           <% end %>
         </td>
       </tr>

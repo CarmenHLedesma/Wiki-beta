@@ -10,7 +10,7 @@ es:
   helpers:
     actions: "Actions"
     links:
-      back_index: "Volver a inicio"
+      go_post: "Ir a post"
       back: "Volver"
       cancel: "Cancelar"
       confirm: "Confirmar"

@@ -1,5 +1,19 @@
-<h3><%= @tag.name %></h3>
-<div><%= render @posts %></div>
+<%- model_class = Tag -%>
+<% content_for :title, 'Wiki Rails Tags' %>
+<% navigation_add model_class.model_name.human.pluralize.titleize, users_path  %>
+<% navigation_add @tag.name, tag_path %>
 
-<%= link_to t('.back_index', :default => t("helpers.links.back_index")),
-            tags_path(@tag), :class => 'btn btn-default' %>
+<div><%#= render @posts %></div>
+
+<div class="page-body-user">
+  <label><%= t('activerecord.attributes.tag.name') %>:</label>
+  <p class="body-user name"><%= @tag.name %></p>
+  <br>
+
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tag_path(@tag), :class => 'btn btn-default btn-xs' %>
+  <td><%= link_to t('.back', :default => t("helpers.links.back")),
+                  tags_path(@tag), :class => 'btn btn-default btn-xs' %></td>
+  <%= link_to t('.go_post', :default => t("helpers.links.go_post")),
+              posts_path(@post), :class => 'btn btn-default btn-xs' %>
+</div>

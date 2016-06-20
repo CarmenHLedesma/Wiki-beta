@@ -40,11 +40,12 @@ div.container{
     padding-right: 30px;
 }
 
-div.page-header{
+div.page-header, h1{
     text-align: left;
     margin-left: 0px;
     margin-top: 0px;
     padding: 8px;
+    margin-left: 40px;
 }
 
 div.col-lg-12{
@@ -63,12 +64,14 @@ div.col-lg-12{
     margin-left: 40px;
 }
 
+
 /*.table.table-striped {
     padding: 8px;
     margin-left: 40px;
     margin-right: 40px;
 }*/
 
+/* btn */
 .btn-primary {
     color: #fff;
     background-color: #f6f8f9;
@@ -98,10 +101,8 @@ a.btn.btn-primary:hover {
 /*.breadcrumb{
     margin-left: 40px;
 } */
-h1 {
-    margin-left: 40px;
-}
 
+/*POST*/
 div.post.body{
     padding: 8px;
     text-align: left;
@@ -121,4 +122,83 @@ p.post.body-user{
 div.form {
     padding: 8px;
     margin-left: -100px;
+}
+/*USER*/
+
+div.page-body-user{
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+p.body-user.name {
+    display: inline-block;
+}
+
+p.body-user.email {
+    display: inline-block;
+}
+
+p.body-user.created {
+    display: inline-block;
+}
+
+div.page-body-user{
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+/* TAGS */
+
+div.form-group-tag {
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+div.wiki_menu, h1, table {
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+table.link_list, tr, th, td {
+    padding: 5px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 40px;
+    /*margin-bottom: 20px;*/
+    font-size: 16px;
+}
+
+/*IMAGES*/
+
+.glyphicons.glyphicons-bin {
+    content: url("glyphicons-17-bin.png");
+}
+
+.glyphicons.glyphicons-bin:before {
+    content: url("glyphicons-17-bin.png");
+}
+
+.glyphicons.glyphicons-paperclip {
+    content: url("glyphicons-63-paperclip.png");
+}
+
+.glyphicons.glyphicons-paperclip:before {
+    content: url("glyphicons-63-paperclip.png");
+}
+
+.small-icon {
+    width: 15px;
 }

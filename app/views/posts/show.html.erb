@@ -5,7 +5,9 @@
 <% post_show_breadcrumb @post %>
 <% navigation_add @post.title, post_path %>
 
-<h1><%= @post.title %></h1>
+<div class="page-header">
+    <h1><%= @post.title %></h1>
+</div>
 <!-- Comentamos lo referente a category
   <label><%#= t('activerecord.attributes.post_category.category') %>:</label>
   <label>

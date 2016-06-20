@@ -3,9 +3,9 @@
 <% content_for :title, 'Wiki Rails Users' %>
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
-<div class="page-header">
+<!--<div class="page-header">
   <h1>Usuarios registrados</h1>
-</div>
+</div>-->
 <table class="table-responsive">
   <thead>
   <tr>
@@ -28,8 +28,8 @@
       <td><% user.avatar %></td>
       <td><%= link_to t('.show', :default => t("helpers.links.show")),
                       user_path(user), :class => 'btn btn-default btn-xs' %></td>
-      <td><%= link_to t('.back', :default => t("helpers.links.back")),
-                  users_path(user), :class => 'btn btn-default btn-xs' %></td>
+      <td><%= link_to t('.go_post', :default => t("helpers.links.go_post")),
+                  posts_path(@post), :class => 'btn btn-default btn-xs' %></td>
     <% end %>
     </tr>
   </tbody>

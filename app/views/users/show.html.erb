@@ -3,22 +3,24 @@
 <% navigation_add model_class.model_name.human.pluralize.titleize, users_path  %>
 <% navigation_add @user.name, user_path %>
 
-<div class="page-body">
-    <h1>Perfil de usuario</h1>
+<div class="page-body-user">
     <label><%= t('activerecord.attributes.user.avatar') %>:</label>
     <label> <%= image_tag(current_user.avatar.url(:thumb), :class => 'round-image-50') %></label>
     <br>
     <label><%= t('activerecord.attributes.user.name') %>:</label>
-    <label><%= @user.name %></label>
+    <p class="body-user name"><%= @user.name %></p>
     <br>
     <label><%= t('activerecord.attributes.user.email') %>:</label>
-    <label><%= @user.email %></label>
+    <p class="body-user email"><%= @user.email %></p>
     <br>
     <label><%= t('activerecord.attributes.user.created_at') %>:</label>
-    <label><%= @user.created_at %></label>
-</div>
+    <p class="body-user created"><%= @user.created_at %></p>
+    <br>
 
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-            edit_user_registration_path(@user), :class => 'btn btn-default' %>
-<%= link_to t('.back_index', :default => t("helpers.links.back_index")),
-            posts_path(@post), :class => 'btn btn-default' %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_user_registration_path(@user), :class => 'btn btn-default btn-xs' %>
+    <td><%= link_to t('.back', :default => t("helpers.links.back")),
+                    users_path(@user), :class => 'btn btn-default btn-xs' %></td>
+    <%= link_to t('.go_post', :default => t("helpers.links.go_post")),
+            posts_path(@post), :class => 'btn btn-default btn-xs' %>
+</div>

@@ -1,6 +1,6 @@
 <%- model_class = Tag -%>
+<!-- añade el título a la url y el breadcrumb en el header -->
+<% content_for :title, 'Wiki-beta' %>
+<% navigation_add 'edit', tag_path %>
 
-<div class="page-header">
-  <h1><%=t '.name', :default => [:'helpers.name.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
 <%= render :partial => 'tag' %>
