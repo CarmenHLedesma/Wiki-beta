@@ -19,8 +19,10 @@
 /* NAVBAR & POST INDEX */
 
 a.navbar-brand{
-    font-size: 25px;
+    font-size: 30px;
     color: #B7B2B2;
+    margin-bottom: 15px;
+    margin-top: 13px;
 }
 .navbar-inverse .navbar-brand {
     color: #B7B2B2;
@@ -28,6 +30,11 @@ a.navbar-brand{
 .navbar-collapse {
     font-size: 13px;
     color: #B7B2B2
+}
+
+div.navbar-collapse.collapse.navbar-responsive-collapse.pull-right {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 ul.navbar-nav{
@@ -172,6 +179,15 @@ div.edit-user {
     font-size: 16px;
 }
 
+div.new-user {
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
 div.avatar {
     padding: 8px;
     text-align: left;
@@ -200,6 +216,7 @@ div.wiki_menu, h1, table {
     margin-left: 40px;
     margin-bottom: 0px;
     font-size: 30px;
+
 }
 
 table.link_list, tr, th, td {
@@ -209,6 +226,7 @@ table.link_list, tr, th, td {
     margin-left: 40px;
     /*margin-bottom: 20px;*/
     font-size: 16px;
+    color: black;
 }
 
 /* Tag cloud */
