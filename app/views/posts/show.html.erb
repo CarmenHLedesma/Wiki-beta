@@ -44,11 +44,16 @@
 <%= link_to t('.create_subtheme', :default => t("helpers.links.create_subtheme")),
             new_child_post_path(@post),
             :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+<%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
             post_path(@post),
             :method => 'delete',
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
             :class => 'btn btn-danger' %>
+<%= link_to post_path(@post), :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
+      <button type="button" class="btn btn-default btn-xs">
+        <%= image_tag("glyphicons-17-bin.png") %>
+      </button>
+<% end %>
 </div>
 <!-- ponemos la condición para saber si se trata de padre o hijo y así mostrar una cosa u otra -->
 <div>
@@ -68,4 +73,3 @@
       </div>
   <% end %>
 </div>
-

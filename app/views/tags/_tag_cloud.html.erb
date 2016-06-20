@@ -1,0 +1,12 @@
+# encoding: utf-8
+
+<div id="tag_cloud_container">
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <div id="tag_cloud_item">
+        <!--Definir la acción que se realizará al hacer click en el tag.
+        Ahora mismo redirige al show del propio tag -->
+
+        <%= link_to tag.name, tag_path(tag), :class => css_class %>
+      </div>
+  <% end %>
+</div>

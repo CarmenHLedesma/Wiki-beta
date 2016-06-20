@@ -107,21 +107,29 @@ div.post.body{
     padding: 8px;
     text-align: left;
     font-style:normal;
+    font-size: 16px;
     margin-left: 40px;
     margin-bottom: 20px;
 }
 
 p.post.body-tag{
     display: inline-block;
+    font-size: 16px;
 }
 
 p.post.body-user{
     display: inline-block;
 }
 
-div.form {
+div.form-post {
     padding: 8px;
-    margin-left: -100px;
+    margin-left: -40px;
+}
+
+div.page-header {
+    margin-left: 110px;
+    margin-right: 40px;
+
 }
 /*USER*/
 
@@ -131,6 +139,7 @@ div.page-body-user{
     font-style:normal;
     margin-left: 40px;
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 p.body-user.name {
@@ -151,6 +160,26 @@ div.page-body-user{
     font-style:normal;
     margin-left: 40px;
     margin-bottom: 20px;
+    font-size: 16px;
+}
+
+div.edit-user {
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: 110px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+div.avatar {
+    padding: 8px;
+    text-align: left;
+    font-style:normal;
+    margin-left: -10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 /* TAGS */
@@ -161,6 +190,7 @@ div.form-group-tag {
     font-style:normal;
     margin-left: 40px;
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 div.wiki_menu, h1, table {
@@ -168,7 +198,7 @@ div.wiki_menu, h1, table {
     text-align: left;
     font-style:normal;
     margin-left: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-size: 30px;
 }
 
@@ -180,6 +210,16 @@ table.link_list, tr, th, td {
     /*margin-bottom: 20px;*/
     font-size: 16px;
 }
+
+/* Tag cloud */
+#tag_cloud_container{ text-align:center; width: 300px; }
+#tag_cloud_item{ float: left; padding: 0px 10px 0px 10px; }
+#tag_cloud_item a:hover { background-color: #b61673; text-decoration: none; }
+
+.css1 { font-size: 1.0em; color: #7a7a79}
+.css2 { font-size: 1.2em; color: #7a7a79}
+.css3 { font-size: 1.4em; color: #7a7a79}
+.css4 { font-size: 1.6em; color: #7a7a79}
 
 /*IMAGES*/
 

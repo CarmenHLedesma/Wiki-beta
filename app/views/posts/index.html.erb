@@ -30,8 +30,8 @@
                 <%= raw(post.text.slice(0,100)+ '...') %>
             <% end %>
         </td>
-        <!-- <td><%#= post.user.name %></td>-->
-        <td><% post.user.try(:name) %></td>
+         <td><%= post.user.name %></td>
+        <!--<td><%# post.user.try(:name) %></td>-->
         <!-- este sería el equivalente en código al método try. Lo que hace es permitir que haya, en este caso,
             un post sin user y que no salte error en el código. Aún así, no se debe abusar porque sería muy
             complicado detectar el error en la aplicación -->
@@ -39,9 +39,9 @@
              post.user.name
              end %> -->
         <td><% if post.document_file_name != nil %>
-            <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+            <button type="button" class="btn btn-default btn-xs">
               <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
-                <%= image_tag("glyphicons-63-paperclip.png", class: 'small-icon') %>
+              <%= image_tag("glyphicons-63-paperclip.png", class: 'small-icon') %>
             </button></td>
           <% end %>
           <td><% l post.created_at %></td>
