@@ -4,41 +4,29 @@
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
 <%= form_for @post, :html => { :class => "form-horizontal post" } do |f| %>
-  <%= f.hidden_field :parent_id %>
-  <% if @post.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
+   <%= f.hidden_field :parent_id %>
+      <% if @post.errors.any? %>
+        <div id="error_expl" class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+<% end %>
 
-    <!-- Añadimos categorías a los posts
-
-    <!--<%#= f.label :categories, :class => 'control-label col-lg-2' %>
-        <%#= f.label :categories, 'Categorías' %>
-      <div> Estas opciones las hemos probado antes y han funcionado, tanto con select2 como en collection_select
-      <%#= f.collection_select :categories, @post.categories, :id, :name, :multiple => true %>
-      <%#= f.collection_select :categories, Category.all, :id, :name, {}, {class: 'select2 form-control', multiple: true} %>
-      <%#= f.collection_select(:categories, @category, :id, :name, {:prompt => "Selecciona las categorías"}, {:multiple => true}) %>
-      </div>-->
-      <!--Agregamos el código propio de la gema acts_as_taggable
-
-    </div>-->
 <div class="form-post">
   <div class="form-group">
     <%= f.label :tag_list, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :tag_list, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:tag_list) %>
+      <div class="col-lg-10">
+        <%= f.text_field :tag_list, :class => 'form-control' %>
+      </div>
+        <%=f.error_span(:tag_list) %>
   </div>
 
   <div class="form-group">
@@ -46,43 +34,41 @@
         <div class="col-lg-10">
           <%= f.text_field :title, :class => 'form-control', :placeholder=>"Introduce un valor" %>
         </div>
-    <%=f.error_span(:title) %>
+         <%=f.error_span(:title) %>
   </div>
 
   <div class="form-group">
     <%= f.label :text, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%#= f.text_area :text, :class => 'ckeditor' %>
-      <%= f.cktext_area raw(:text), :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:text) %>
+        <div class="col-lg-10">
+          <%= f.cktext_area raw(:text), :class => 'form-control' %>
+        </div>
+          <%=f.error_span(:text) %>
   </div>
   <!-- Hacemos un collection_select para poder tener un desplegable con users a seleccionar
     (en este caso seleccionaremos por email). Lo que el show nos devolverá será la id del
     user que hemos seleccionado -->
   <div class="form-group">
     <%= f.label :user, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10 aligner">
-      <%= f.collection_select :user_id, @users, :id, :name, :class => 'form-control select-search' %>
-      <%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
-      <%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
-      <% f.error_span(:user) %>
-    </div>
+        <div class="col-lg-10 aligner">
+          <%= f.collection_select :user_id, @users, :id, :name, :class => 'form-control select-search' %>
+          <%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
+          <%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
+          <% f.error_span(:user) %>
+        </div>
   </div>
 
-    <!-- Label para mostrar el documento adjunto  -->
   <div class="form-group">
     <%= f.label :file, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10 aligner">
         <%= f.file_field :document %>
       </div>
   </div>
-<br>
+  <br>
   <div class="form-group">
-  <div class="col-lg-offset-2 col-lg-10">
-    <%= f.submit nil, :class => 'btn btn-default ' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), posts_path, :class => 'btn btn-default' %>
-  </div>
+      <div class="col-lg-offset-2 col-lg-10">
+        <%= f.submit nil, :class => 'btn btn-default ' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")), posts_path, :class => 'btn btn-default' %>
+      </div>
   </div>
 <% end %>
 </div>

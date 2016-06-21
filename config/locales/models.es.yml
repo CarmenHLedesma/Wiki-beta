@@ -10,12 +10,6 @@ es:
       tag:
         one: 'Tag'
         other: 'Tags'
-      category:
-        one: 'Categoría'
-        other: 'Categorías'
-      post_category:
-        one: 'Categoría del post'
-        other: 'Categorías del post'
     attributes:
       user:
         user: Usuario
@@ -32,15 +26,11 @@ es:
         author: 'Autor'
         user: 'Usuario'
         tag_list: 'Lista de etiquetas'
-        file: 'Archivo adjunto'
-        document: 'Documento adjunto'
-        tag: 'Tag'
+        file: 'Adjunto'
+        document: 'Adjunto'
+        tag: 'Etiquetas'
       tag:
         name: 'Nombre'
-      category:
-        name: 'Nombre'
-      post_category:
-        category: 'Categoría'
       subtheme:
         user:
           name: "Nombre"

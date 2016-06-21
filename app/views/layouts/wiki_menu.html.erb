@@ -1,27 +1,5 @@
-<!--
-<div class="wiki_menu">
-<h1>Bienvenido a wiki-rails</h1>
-
-  <table class="link_list">
-    <tr>
-      <th></th>
-      <td><%#= link_to 'Ir al menú de post', posts_path, :class => '' %></td>
-    </tr>
-    <br>
-    <tr>
-      <th></th>
-      <td><%#= link_to 'Ir al menú de user', users_path, :class => '' %></td>
-    </tr>
-    <br>
-    <tr>
-      <th></th>
-      <td><%#= link_to 'Ir al menú de tags', tags_path,  :class => '' %></td>
-    </tr>
-  </table>
-</div>
-    -->
-  <div id="menu_wiki">
-    <h1>Bienvenido a wiki-rails</h1>
+<div id="menu_wiki">
+  <h1>Bienvenido a wiki-rails</h1>
     <div id="menu_wiki_container">
       <%= link_to(posts_path) do %>
           <div id="menu_opcion1">Posts
@@ -40,4 +18,4 @@
             <%= image_tag("glyphicons-67-tags.png") %></div>
       <% end %>
     </div>
-  </div>
+</div>

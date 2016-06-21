@@ -2,11 +2,7 @@
 <!-- añade el título a la url y el breadcrumb en el header -->
 <% content_for :title, 'wiki-beta' %>
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
-<!--
-<div class="page-header">
-  #######################
-</div>
--->
+
 <table class="table-responsive">
   <thead>
       <tr>
@@ -26,11 +22,6 @@
         <td><% link_to post.id, post_path(post) %></td>
         <td><%= post.title %></td>
         <td><%= post.tag_list %></td>
-        <!-- Limitamos el número de caracteres que vamos a mostrar en index text -->
-      <!--  <td><%# if post.text.length > 100 %>
-                <%#= raw(post.text.slice(0,100)+ '...') %>
-            <%# end %>
-        </td> -->
         <td>
           <% if strip_tags(post.text).length > 100 %>
               <%= strip_tags(post.text).slice(0,100)+ '...' %>
@@ -39,20 +30,12 @@
           <% end %>
         </td>
          <td><%= post.user.name %></td>
-        <!--<td><%# post.user.try(:name) %></td>-->
-        <!-- este sería el equivalente en código al método try. Lo que hace es permitir que haya, en este caso,
-            un post sin user y que no salte error en el código. Aún así, no se debe abusar porque sería muy
-            complicado detectar el error en la aplicación -->
-        <!--<%# if post.user.present?
-             post.user.name
-             end %> -->
         <td><% if post.document_file_name != nil %>
             <button type="button" class="btn btn-default btn-xs">
-              <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
               <%= image_tag("glyphicons-37-file.png", class: 'small-icon') %>
             </button></td>
-          <% end %>
-          <td><% l post.created_at %></td>
+            <% end %>
+            <td><% l post.created_at %></td>
         <td>
           <% if post.parent_id == nil %>
             <%= link_to t('.show', :default => t("helpers.links.show")),
@@ -64,12 +47,6 @@
 
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>
-          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      post_path(post),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-
           <%= link_to post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
              <button type="button" class="btn btn-default btn-xs">
                 <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>

@@ -8,14 +8,7 @@
 <div class="page-header">
     <h1><%= @post.title %></h1>
 </div>
-<!-- Comentamos lo referente a category
-  <label><%#= t('activerecord.attributes.post_category.category') %>:</label>
-  <label>
-    <%# @post.categories.to_a.each do |a| %>
-        <%#= a.name %>
-    <%# end %>
-  </label>
-  -->
+
 <div class="post body">
   <label><%= t('activerecord.attributes.post.tag') %>:</label>
   <p class="post body-tag"><%= @post.tag_list %></p>
@@ -26,15 +19,15 @@
   <label><%= t('activerecord.attributes.user.name') %>:</label>
   <p class="post body-user"><%= @post.user.name %></p>
   <br>
-  <% if @post.document_file_name != nil %>
+    <% if @post.document_file_name != nil %>
       <label><%= t('activerecord.attributes.post.document') %>:</label>
       <label><%= @post.document_file_name %></label>
           <%= link_to document_download_post_path(@post) do %>
             <button type="button" class="btn btn-default btn-xs">
                 <%= image_tag("glyphicons-37-file.png") %>
             </button>
-      <% end %>
-  <% end %>
+          <% end %>
+    <% end %>
   <br>
   <br>
 <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -45,11 +38,6 @@
 <%= link_to t('.create_subtheme', :default => t("helpers.links.create_subtheme")),
             new_child_post_path(@post),
             :class => 'btn btn-default' %>
-<%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
-            post_path(@post),
-            :method => 'delete',
-            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-            :class => 'btn btn-danger' %>
 <%= link_to post_path(@post), :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
       <button type="button" class="btn btn-default btn-xs">
         <%= image_tag("glyphicons-17-bin.png") %>
@@ -61,7 +49,7 @@
   <% if @post.parent_id == nil %>
       <% @post.children.each do |subtheme| %>
       <div class="subtheme body">
-          <h3>Post hijo</h3>
+        <h3>Post hijo</h3>
           <label><%= t('activerecord.attributes.post.title') %>:</label>
           <label><%= subtheme.title %></label>
           </br>

@@ -3,16 +3,12 @@
 <% navigation_add model_class.model_name.human.pluralize.titleize, users_path  %>
 <% navigation_add @tag.name, tag_path %>
 
-<div><%#= render @posts %></div>
-
 <div class="page-body-user">
   <label><%= t('activerecord.attributes.tag.name') %>:</label>
-  <p class="body-user name"><%= @tag.name %></p>
+    <p class="body-user name"><%= @tag.name %></p>
   <br>
-
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_tag_path(@tag), :class => 'btn btn-default btn-xs' %>
-  <td><%= link_to t('.back', :default => t("helpers.links.back")),
+    <td><%= link_to t('.back', :default => t("helpers.links.back")),
                   tags_path(@tag), :class => 'btn btn-default btn-xs' %></td>
-
 </div>

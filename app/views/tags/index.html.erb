@@ -5,15 +5,14 @@
 
 <table class="table-responsive">
   <thead>
-  <tr>
+    <tr>
     <th>Nombre:</th>
     </br>
-    <!--Se podrían añadir los posts a los que pertenecen en otra pantalla desde name?-->
     <th><% t '.actions', :default => t("helpers.actions") %></th>
-  </tr>
+    </tr>
   </thead>
   <tbody>
-  <% @tags.each do |tag| %>
+    <% @tags.each do |tag| %>
       <tr>
         <td><%= tag.name %></td>
         <td><%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -25,14 +24,14 @@
               <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
             </button>
               <% end %>
+      </tr>
+    <% end %>
 
-  <% end %>
-  </tr>
   </tbody>
 </table>
-<%= link_to t('.new', :default => t("helpers.links.new")),
+    <%= link_to t('.new', :default => t("helpers.links.new")),
             new_tag_path,
             :class => 'btn btn-default btn new' %>
-<td><%= link_to t('.back', :default => t("helpers.links.back")),
-                root_path, :class => 'btn btn-default' %></td>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                root_path, :class => 'btn btn-default' %>
 <%#= render 'layouts/tag_cloud' %>
