@@ -27,9 +27,16 @@
         <td><%= post.title %></td>
         <td><%= post.tag_list %></td>
         <!-- Limitamos el número de caracteres que vamos a mostrar en index text -->
-        <td><% if post.text.length > 100 %>
-                <%= raw(post.text.slice(0,100)+ '...') %>
-            <% end %>
+      <!--  <td><%# if post.text.length > 100 %>
+                <%#= raw(post.text.slice(0,100)+ '...') %>
+            <%# end %>
+        </td> -->
+        <td>
+          <% if strip_tags(post.text).length > 100 %>
+              <%= strip_tags(post.text).slice(0,100)+ '...' %>
+          <% else %>
+              <%= strip_tags(post.text) %>
+          <% end %>
         </td>
          <td><%= post.user.name %></td>
         <!--<td><%# post.user.try(:name) %></td>-->

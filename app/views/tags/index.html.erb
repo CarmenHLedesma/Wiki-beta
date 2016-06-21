@@ -25,11 +25,7 @@
               <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
             </button>
               <% end %>
-          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                    tag_path(tag),
-                    :method => :delete,
-                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                    :class => 'btn btn-xs btn-danger' %> </td>
+
   <% end %>
   </tr>
   </tbody>
@@ -37,4 +33,6 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_tag_path,
             :class => 'btn btn-default btn new' %>
+<td><%= link_to t('.back', :default => t("helpers.links.back")),
+                root_path, :class => 'btn btn-default' %></td>
 <%#= render 'layouts/tag_cloud' %>

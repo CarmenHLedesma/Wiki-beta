@@ -28,6 +28,8 @@
       <td><% user.avatar %></td>
       <td><%= link_to t('.show', :default => t("helpers.links.show")),
                       user_path(user), :class => 'btn btn-default btn-xs' %></td>
+      <td><%= link_to t('.back', :default => t("helpers.links.back")),
+                      root_path, :class => 'btn btn-default btn-xs' %></td>
     <% end %>
     </tr>
   </tbody>
