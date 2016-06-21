@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 has_many :posts
 has_attached_file :avatar, :styles => { :medium => '300x300>', :thumb => '100x100#' }, :default_url => '/images/:style/missing.png'
 validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+validates_presence_of :email, :password
+validates_length_of :password, minimum: 6
 
 # Include default devise modules. Others available are:
 # :confirmable, :lockable, :timeoutable and :omniauthable

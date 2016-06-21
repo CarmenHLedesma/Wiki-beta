@@ -28,8 +28,6 @@
       <td><% user.avatar %></td>
       <td><%= link_to t('.show', :default => t("helpers.links.show")),
                       user_path(user), :class => 'btn btn-default btn-xs' %></td>
-      <td><%= link_to t('.go_post', :default => t("helpers.links.go_post")),
-                  posts_path(@post), :class => 'btn btn-default btn-xs' %></td>
     <% end %>
     </tr>
   </tbody>

@@ -18,6 +18,7 @@ es:
         other: 'Categorías del post'
     attributes:
       user:
+        user: Usuario
         user_id: 'Usuario'
         email: 'email'
         password: 'contraseña'
@@ -29,7 +30,11 @@ es:
         title: 'Título'
         text: 'Texto'
         author: 'Autor'
+        user: 'Usuario'
+        tag_list: 'Lista de etiquetas'
+        file: 'Archivo adjunto'
         document: 'Documento adjunto'
+        tag: 'Tag'
       tag:
         name: 'Nombre'
       category:
@@ -41,7 +46,7 @@ es:
           name: "Nombre"
         post:
           title: "Título"
-          text: "Text"
+          text: "Texto"
 
 
 #### Gestión de mensajes de ERRORES

@@ -18,6 +18,7 @@ en:
         other: 'Categorías del post'
     attributes:
       user:
+        user: user
         user_id: 'User'
         email: 'email'
         password: 'Password'
@@ -29,6 +30,9 @@ en:
         title: 'Title'
         text: 'Text'
         author: 'Author'
+        user: 'User'
+        tag_list: 'Tag list'
+        file: 'file'
         document: 'Document Attachment'
         tag: 'Tag'
       tag:

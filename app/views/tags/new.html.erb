@@ -3,22 +3,3 @@
   <h1><%=t '.name', :default => [:'helpers.tags.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
 <%= render :partial => 'tag' %>
-
-<!--
-<div class="text-left">
-  <h2>Nueva tag</h2>
-  <%#= form_for url: new_tag_path do |f| %>
-
-      <div class="field">
-        <%#= f.label :name %><br />
-        <%#= f.text_field :name, required: true%>
-      </div>
-
-      <div class="actions">
-        <%#= f.submit "Nueva Tag" %>
-      </div>
-  <%# end %>
-</div>
-
-<%#= render :partial => 'tag' %>
--->

@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   # using acts_as_taggable_on
   acts_as_taggable_on :tags
 
+  validates_presence_of :title, :text, :user, message: 'El campo no puede quedar en blanco'
+
   #has_many :posts_categories
    #has_and_belongs_to_many :categories, :join_table => 'posts_categories'
   #FUNCIONANDO

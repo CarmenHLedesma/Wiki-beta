@@ -16,8 +16,6 @@
   <% @tags.each do |tag| %>
       <tr>
         <td><%= tag.name %></td>
-        <td><%= link_to t('.show', :default => t("helpers.links.show")),
-                        tag_path(tag), :class => 'btn btn-default btn-xs' %></td>
         <td><%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_tag_path(tag), :class => 'btn btn-default btn-xs' %></td>
         <td><%= link_to tag_path(tag),  :method => :delete,
@@ -39,9 +37,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_tag_path,
             :class => 'btn btn-default btn new' %>
-
-<%= link_to t('helpers.links.go_post', :default => t("helpers.links.go_post")),
-            posts_path(@post),
-            :class => 'btn btn-default btn' %>
-
 <%#= render 'layouts/tag_cloud' %>

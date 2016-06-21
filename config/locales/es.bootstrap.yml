@@ -10,15 +10,14 @@ es:
   helpers:
     actions: "Actions"
     links:
-      go_post: "Ir a post"
       back: "Volver"
       cancel: "Cancelar"
       confirm: "Confirmar"
       destroy: "Borrar"
       show: "Mostrar"
       new: "Nuevo"
-      create_subtheme: "Crear Subtema"
       edit: "Editar"
+      create_subtheme: "Crear Subtema"
       download: "Descarga"
     titles:
       edit: "Editar %{model}"

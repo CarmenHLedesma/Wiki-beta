@@ -10,7 +10,6 @@ en:
   helpers:
     actions: "Actions"
     links:
-      go_post: "Go to post"
       back: "Back"
       cancel: "Cancel"
       confirm: "Are you sure?"
