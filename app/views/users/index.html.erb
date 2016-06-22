@@ -1,33 +1,24 @@
 <%- model_class = User -%>
 <!-- añade el título a la url y el breadcrumb en el header -->
-<% content_for :title, 'Wiki Rails Users' %>
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
-<table class="table-responsive">
+<table id="tabla_listado" class="listado_users">
   <thead>
   <tr>
-    <th><% model_class.human_attribute_name(:id) %></th>
-    <th><%= model_class.human_attribute_name(:name) %></th>
-    <th><%= model_class.human_attribute_name(:email) %></th>
-    <th><% model_class.human_attribute_name(:created_at) %></th>
-    <th><% model_class.human_attribute_name(:avatar) %></th>
-    <th><% t '.actions', :default => t("helpers.actions") %></th>
+    <th class="col20"><%= model_class.human_attribute_name(:name) %></th>
+    <th class="col20"><%= model_class.human_attribute_name(:email) %></th>
+    <th class="col10"></th>
   </tr>
   </thead>
   <tbody>
-
   <% @users.each do |user| %>
-    <tr>
-      <td><% user.id %></td>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <td><% user.created_at %></td>
-      <td><% user.avatar %></td>
-      <td><%= link_to t('.show', :default => t("helpers.links.show")),
-                      user_path(user), :class => 'btn btn-default btn-xs' %></td>
-      <td><%= link_to t('.back', :default => t("helpers.links.back")),
-                      root_path, :class => 'btn btn-default btn-xs' %></td>
-    <% end %>
-    </tr>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to t('.show', :default => t("helpers.links.show")  ),
+                        user_path(user), :class => 'btn btn-default btn-xs' %>
+        </td>
+      </tr>
+  <% end %>
   </tbody>
 </table>

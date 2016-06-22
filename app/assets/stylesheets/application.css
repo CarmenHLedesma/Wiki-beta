@@ -59,18 +59,22 @@ div.col-lg-12{
     padding-right: 75px;
 }
 
-
+/*
 .table, thead, tr, th {
-    padding: 8px;
+    padding: 8px 20px 8px 20px;
     line-height: 2;
     text-align: center;
+    width: 500px;
 }
+*/
 
 .table-responsive {
-    padding: 8px;
-    margin-left: 40px;
+    padding: 8px 20px 8px 20px;
+    line-height: 2;
+    text-align: center;
+    width: 500px;
+    margin-left: 80px;
 }
-
 /* btn */
 .btn-primary {
     color: #fff;
@@ -336,3 +340,31 @@ table.link_list, tr, th, td {
 .small-icon {
     width: 15px;
 }
+
+
+#tabla_listado {
+    padding: 8px;
+    margin-left: 10px;
+}
+
+#tabla_listado th, td {
+    text-align: left;
+    padding: 2px;
+}
+
+#tabla_listado.listado_posts { width: 98%; }
+#tabla_listado.listado_posts th.col8 { width: 8%; }
+#tabla_listado.listado_posts th.col10 { width: 10%; }
+#tabla_listado.listado_posts th.col13 { width: 13%; }
+#tabla_listado.listado_posts th.col15 { width: 15%; }
+#tabla_listado.listado_posts th.col37 { width: 37%; }
+
+#tabla_listado th, td { text-align: left; }
+
+#tabla_listado.listado_users { width: 50%; }
+#tabla_listado.listado_users th.col10 { width: 10%; }
+#tabla_listado.listado_users th.col20 { width: 20%; }
+
+#tabla_listado.listado_tags { width: 30%; }
+#tabla_listado.listado_tags th.col10 { width: 10%; }
+#tabla_listado.listado_tags th.col20 { width: 20%; }

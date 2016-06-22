@@ -1,78 +1,77 @@
 <%- model_class = Post -%>
 <!-- añade el título a la url y el breadcrumb en el header -->
-<% content_for :title, 'wiki-beta' %>
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
-<table class="table-responsive">
+<table id="tabla_listado" class="listado_posts">
   <thead>
-      <tr>
-        <th><%= model_class.human_attribute_name(:title) %></th>
-        <th><%= model_class.human_attribute_name(:tag) %></th>
-        <th><%= model_class.human_attribute_name(:text) %></th>
-        <th><%= model_class.human_attribute_name(:user) %></th>
-        <th><%= model_class.human_attribute_name(:document)%></th>
-        <th></th>
-      </tr>
-
+  <tr>
+    <th class="col15"><%= model_class.human_attribute_name(:title) %></th>
+    <th class="col15"><%= model_class.human_attribute_name(:tag) %></th>
+    <th class="col37"><%= model_class.human_attribute_name(:text) %></th>
+    <th class="col10"><%= model_class.human_attribute_name(:name) %></th>
+    <th class="col8">Adjunto<%#= model_class.human_attribute_name(:document)%></th>
+    <th class="col13"></th>
+  </tr>
   </thead>
   <tbody>
-  <% if @posts != nil && @posts.size > 0  %>
-      <% @posts.each do |post| %>
-          <tr>
-            <td><%= post.title %></td>
-            <td><%= post.tag_list %></td>
-            <td>
-              <% if strip_tags(post.text).length > 100 %>
-                  <%= strip_tags(post.text).slice(0,100)+ '...' %>
-              <% else %>
-                  <%= strip_tags(post.text) %>
-              <% end %>
-            </td>
-            <td><%= post.user.name %></td>
-            <td><% if post.document_file_name != nil %>
-                    <button type="button" class="btn btn-default btn-xs">
-                      <%= image_tag("glyphicons-37-file.png", class: 'small-icon') %>
-                    </button>
-                <% end %>
-            </td>
-            <td>
-              <% if post.parent_id == nil %>
-                <%= link_to t('.show', :default => t("helpers.links.show")),
-                    post_path(post), :class => 'btn btn-default btn-xs' %>
-              <% else %>
-                 <%= link_to t('.show', :default => t("helpers.links.show")),
-                     show_child_post_path(post), :class => 'btn btn-default btn-xs' %>
-              <% end %>
-
-              <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                          edit_post_path(post), :class => 'btn btn-default btn-xs' %>
-              <%= link_to post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
-                 <button type="button" class="btn btn-default btn-xs">
-                    <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
-                 </button>
-              <% end %>
-            </td>
-          </tr>
-      <% end %>
-  <% else %>
+  <% @posts.each do |post| %>
       <tr>
-        <td colspan="6">No existen registros</td>
+        <td><%= post.title %></td>
+        <td><%= post.tag_list %></td>
+        <!-- Limitamos el número de caracteres que vamos a mostrar en index text -->
+        <!--  <td><%# if post.text.length > 100 %>
+                 <%#= raw(post.text.slice(0,100)+ '...') %>
+             <%# end %>
+           </td> -->
+        <td>
+          <% if strip_tags(post.text).length > 100 %>
+              <%= strip_tags(post.text).slice(0,80)+ '...' %>
+          <% else %>
+              <%= strip_tags(post.text) %>
+          <% end %>
+        </td>
+        <td><%= post.user.name %></td>
+        <!--<td><%# post.user.try(:name) %></td>-->
+        <!-- este sería el equivalente en código al método try. Lo que hace es permitir que haya, en este caso,
+             un post sin user y que no salte error en el código. Aún así, no se debe abusar porque sería muy
+             complicado detectar el error en la aplicación -->
+        <!--<%# if post.user.present?
+            post.user.name
+            end %> -->
+        <td>
+          <% if post.document_file_name != nil %>
+              <button type="button" class="btn btn-default btn-xs">
+                <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
+                <%= image_tag("glyphicons-37-file.png", class: 'small-icon') %>
+              </button>
+          <% end %>
+        </td>
+        <td><% if post.parent_id == nil %>
+              <%= link_to t('.show', :default => t("helpers.links.show")),
+                          post_path(post), :class => 'btn btn-default btn-xs' %>
+          <% else %>
+              <%= link_to t('.show', :default => t("helpers.links.show")),
+                          show_child_post_path(post), :class => 'btn btn-default btn-xs' %>
+          <% end %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-default btn-xs' %>
+          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                       post_path(post),
+                       :method => :delete,
+                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                       :class => 'btn btn-xs btn-danger' %>
+
+          <%= link_to post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
+              <button type="button" class="btn btn-default btn-xs">
+                <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
+              </button>
+          <% end %>
+        </td>
       </tr>
   <% end %>
   </tbody>
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_post_path,
-            :class => 'btn btn-default btn new' %>
-
-<!-- Añadimos código Javascript para nuestros select en index con select2 -->
-
-<% content_for :js do %>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            prettyPrint();
-            $('select#simple-example').select2();
-        });
-    </script>
-<% end %>
+            new_post_path, :class => 'btn btn-default new' %>
