@@ -27,10 +27,12 @@ en:
         user: 'User'
         tag_list: 'Tag list'
         file: 'file'
-        document: 'Document Attachment'
+        document: 'Document'
         tag: 'Tags'
+        tag_list: 'Tags'
       tag:
         name: 'Name'
+        tag_list: 'Tags'
       subtheme:
         user:
           name: "Name"

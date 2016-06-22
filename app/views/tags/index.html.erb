@@ -11,18 +11,24 @@
   </tr>
   </thead>
   <tbody>
-  <% @tags.each do |tag| %>
-      <tr>
-        <td><%= tag.name %></td>
-        <td><%= link_to t('.edit', :default => t("helpers.links.edit")), edit_tag_path(tag),
-                        :class => 'btn btn-default btn-xs' %>
-          <%= link_to tag_path(tag),  :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
-              <button type="button" class="btn btn-default btn-xs">
-                <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
-              </button>
-          <% end %>
-        </td>
-      </tr>
+  <% if @tags != nil && @tags.size > 0 %>
+      <% @tags.each do |tag| %>
+          <tr>
+            <td><%= tag.name %></td>
+            <td><%= link_to t('.edit', :default => t("helpers.links.edit")), edit_tag_path(tag),
+                            :class => 'btn btn-default btn-xs' %>
+              <%= link_to tag_path(tag),  :method => :delete, :data => { :confirm => t('.confirm', :default => 'Are you sure?') } do %>
+                  <button type="button" class="btn btn-default btn-xs">
+                    <%= image_tag("glyphicons-17-bin.png", class: 'small-icon') %>
+                  </button>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+  <% else %>
+    <tr>
+      <td class="sin_resultados" colspan="3">No hay resultados disponibles</td>
+    </tr>
   <% end %>
   </tbody>
 </table>

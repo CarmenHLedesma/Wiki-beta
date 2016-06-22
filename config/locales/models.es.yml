@@ -27,10 +27,12 @@ es:
         user: 'Usuario'
         tag_list: 'Lista de etiquetas'
         file: 'Adjunto'
-        document: 'Adjunto'
+        document: 'Documento'
         tag: 'Etiquetas'
+        tag_list: 'Etiquetas'
       tag:
         name: 'Nombre'
+        tag_list: 'Etiquetas'
       subtheme:
         user:
           name: "Nombre"

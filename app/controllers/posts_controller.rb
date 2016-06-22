@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @users = User.all
+    @tags = Tag.all
   end
 
   def new_child
@@ -46,6 +47,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @users = User.all
+    @tags = Tag.all
   end
 
   # POST /posts

@@ -23,12 +23,22 @@
 <div class="form-post">
   <div class="form-group">
     <%= f.label :tag_list, :class => 'control-label col-lg-2' %>
-      <div class="col-lg-10">
-        <%= f.text_field :tag_list, :class => 'form-control' %>
-      </div>
-        <%=f.error_span(:tag_list) %>
+    <div class="col-lg-10">
+      <%= f.collection_select :tag_list, @tags, :name, :name, :class => 'form-control select-search', :multiple => true, :prompt => "Seleccione una opción"  %>
+    </div>
+    <%=f.error_span(:tag_list) %>
   </div>
-
+  ===========================================================00
+  <!--
+<div class="form-post">
+  <div class="form-group">
+    <%#= f.label :tag_list, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%#= f.text_field :tag_list, :class => 'form-control' %>
+      </div>
+        <%#=f.error_span(:tag_list) %>
+  </div>
+-->
   <div class="form-group">
     <%= f.label :title, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">

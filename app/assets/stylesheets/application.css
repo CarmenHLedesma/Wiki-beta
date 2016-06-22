@@ -351,20 +351,24 @@ table.link_list, tr, th, td {
     text-align: left;
     padding: 2px;
 }
+td.sin_resultados {
+    text-align: center;
+}
 
 #tabla_listado.listado_posts { width: 98%; }
-#tabla_listado.listado_posts th.col8 { width: 8%; }
-#tabla_listado.listado_posts th.col10 { width: 10%; }
-#tabla_listado.listado_posts th.col13 { width: 13%; }
-#tabla_listado.listado_posts th.col15 { width: 15%; }
-#tabla_listado.listado_posts th.col37 { width: 37%; }
+#tabla_listado.listado_posts th.col8 { width: 10%; min-width: 70px; }
+#tabla_listado.listado_posts th.col10 { width: 10%; min-width: 144px; }
+#tabla_listado.listado_posts th.col13 { width: 13%; min-width: 144px; }
+#tabla_listado.listado_posts th.col15 { width: 13%; min-width: 144px; }
+#tabla_listado.listado_posts th.col37 { width: 37%; min-width: 144px; }
 
 #tabla_listado th, td { text-align: left; }
 
 #tabla_listado.listado_users { width: 50%; }
-#tabla_listado.listado_users th.col10 { width: 10%; }
-#tabla_listado.listado_users th.col20 { width: 20%; }
+#tabla_listado.listado_users th.col10 { width: 10%; min-width: 144px; }
+#tabla_listado.listado_users th.col20 { width: 20%; min-width: 144px; }
 
 #tabla_listado.listado_tags { width: 30%; }
-#tabla_listado.listado_tags th.col10 { width: 10%; }
-#tabla_listado.listado_tags th.col20 { width: 20%; }
+#tabla_listado.listado_tags th.col10 { width: 10%; min-width: 100px; }
+#tabla_listado.listado_tags th.col20 { width: 20%; min-width: 180px; }
+
