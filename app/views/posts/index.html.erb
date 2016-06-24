@@ -13,7 +13,7 @@
           <%= submit_tag :search %>
 
           <%= label_tag :document %>
-          <%= check_box_tag 'file', 'yes', true %>
+          <%= check_box_tag 'document', 'yes', true %>
 
           <%= link_to t('.search', :default => t("helpers.links.search")),
                 posts_path(@post), :class => 'default' %>
