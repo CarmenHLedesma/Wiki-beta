@@ -4,13 +4,21 @@
 
 <div class="search-form">
   <%= form_tag(@post, method: 'get') do %>
-      <%= label_tag :title %>
-      <%= text_field_tag(:title)  %>
+          <%= label_tag :title %>
+          <%= text_field_tag :title  %>
 
-      <%= label_tag :text %>
-      <%= text_field_tag(:text) %>
+          <%= label_tag :text %>
+          <%= text_field_tag :text %>
 
-      <%= submit_tag(:search) %>
+          <%= submit_tag :search %>
+
+      <%#= if :title != nil && :text == nil %>
+          <%#= label_tag :title %>
+          <%#= text_field_tag :title  %>
+      <%#= elsif :title == nil && :text != nil %>
+          <%#= label_tag :text %>
+          <%#= text_field_tag :text %>
+      <%# end %>
       <%#= link_to t('.search', :default => t("helpers.links.search")),
                 posts_path(@post), :class => 'default' %>
 

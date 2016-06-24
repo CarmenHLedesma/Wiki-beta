@@ -14,6 +14,13 @@ class PostsController < ApplicationController
       end
   end
 
+  # if params[:title] != nil
+  #   @posts = Post.search(params[:title])
+  # elsif  params[:text] != nil
+  #   @posts = Post.search(params[:text])
+  # else
+  #   @posts = Post.all
+  # end
   #def mis_posts
    # @posts = current_user.posts
   #end
