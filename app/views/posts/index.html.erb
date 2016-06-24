@@ -12,6 +12,14 @@
 
           <%= submit_tag :search %>
 
+          <%= label_tag :document %>
+          <%= check_box_tag 'file', 'yes', true %>
+
+          <%= link_to t('.search', :default => t("helpers.links.search")),
+                posts_path(@post), :class => 'default' %>
+
+
+
       <%#= if :title != nil && :text == nil %>
           <%#= label_tag :title %>
           <%#= text_field_tag :title  %>

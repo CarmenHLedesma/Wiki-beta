@@ -30,7 +30,7 @@ es:
         document: 'Documento'
         tag: 'Etiquetas'
         tag_list: 'Etiquetas'
-        search: 'Buscar'
+        search: 'Nueva búsqueda'
       tag:
         name: 'Nombre'
         tag_list: 'Etiquetas'

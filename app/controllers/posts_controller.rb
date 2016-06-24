@@ -7,8 +7,8 @@ class PostsController < ApplicationController
     @tags = Tag.all
     @users = User.all
     @posts = Post.all.order('created_at DESC')
-      if params[:title] || params[:text]
-        @posts = Post.search(params[:title], params[:text])
+      if params[:title] || params[:text] || params[:document]
+        @posts = Post.search(params[:title], params[:text], params[:document])
       else
         @posts = Post.all
       end

@@ -19,13 +19,13 @@ es:
       edit: "Editar"
       create_subtheme: "Crear Subtema"
       download: "Descarga"
-      search: "Buscar"
+      search: "Nueva búsqueda"
     titles:
       edit: "Editar %{model}"
       save: "Guardar %{model}"
       new: "Nuevo %{model}"
       delete: "Borrar %{model}"
-      search: "Buscar %{model}"
+      search: "Nueva búsqueda %{model}"
     tags:
       edit: "Editar %{model}"
       save: "Guardar %{model}"
