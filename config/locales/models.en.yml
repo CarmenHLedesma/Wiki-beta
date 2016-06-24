@@ -30,6 +30,7 @@ en:
         document: 'Document'
         tag: 'Tags'
         tag_list: 'Tags'
+        search: 'Search'
       tag:
         name: 'Name'
         tag_list: 'Tags'

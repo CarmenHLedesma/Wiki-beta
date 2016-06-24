@@ -2,6 +2,26 @@
 <!-- añade el título a la url y el breadcrumb en el header -->
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
+<div class="search-form">
+  <%= form_tag(@post, method: 'get') do %>
+      <%= label_tag :title %>
+      <%= text_field_tag(:title)  %>
+
+      <%= label_tag :text %>
+      <%= text_field_tag(:text) %>
+
+      <%= submit_tag(:search) %>
+      <%#= link_to t('.search', :default => t("helpers.links.search")),
+                posts_path(@post), :class => 'default' %>
+
+      <%#= label_tag :text %>
+      <%#= text_field_tag :text %>
+
+      <%#= label_tag :document %>
+      <%#= check_box_tag 'file', 'yes', true %>
+  <% end %>
+</div>
+
 <table id="tabla_listado" class="listado_posts">
   <thead>
   <tr>

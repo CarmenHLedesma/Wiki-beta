@@ -4,81 +4,74 @@
 <% navigation_add model_class.model_name.human.pluralize.titleize, '' %>
 
 <%= form_for @post, :html => { :class => "form-horizontal post" } do |f| %>
-   <%= f.hidden_field :parent_id %>
-      <% if @post.errors.any? %>
+    <%= f.hidden_field :parent_id %>
+    <% if @post.errors.any? %>
         <div id="error_expl" class="panel panel-danger">
           <div class="panel-heading">
             <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
           </div>
           <div class="panel-body">
             <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
+              <% @post.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
             </ul>
           </div>
         </div>
-<% end %>
+    <% end %>
 
-<div class="form-post">
-  <div class="form-group">
-    <%= f.label :tag_list, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.collection_select :tag_list, @tags, :name, :name, :class => 'form-control select-search', :multiple => true, :prompt => "Seleccione una opción"  %>
-    </div>
-    <%=f.error_span(:tag_list) %>
-  </div>
-  ===========================================================00
-  <!--
-<div class="form-post">
-  <div class="form-group">
-    <%#= f.label :tag_list, :class => 'control-label col-lg-2' %>
-      <div class="col-lg-10">
-        <%#= f.text_field :tag_list, :class => 'form-control' %>
-      </div>
-        <%#=f.error_span(:tag_list) %>
-  </div>
--->
-  <div class="form-group">
-    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="form-post">
+      <div class="form-group">
+        <%= f.label :title, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">
-          <%= f.text_field :title, :class => 'form-control', :placeholder=>"Introduce un valor" %>
+          <%= f.text_field :title, :class => 'form-control' %>
         </div>
-         <%=f.error_span(:title) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :text, :class => 'control-label col-lg-2' %>
+        <%=f.error_span(:title) %>
+      </div>
+      <div class="form-group">
+        <%= f.label :text, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">
           <%= f.cktext_area raw(:text), :class => 'form-control' %>
         </div>
-          <%=f.error_span(:text) %>
-  </div>
-  <!-- Hacemos un collection_select para poder tener un desplegable con users a seleccionar
-    (en este caso seleccionaremos por email). Lo que el show nos devolverá será la id del
-    user que hemos seleccionado -->
-  <div class="form-group">
-    <%= f.label :user, :class => 'control-label col-lg-2' %>
+        <%=f.error_span(:text) %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :tag_list, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+<%#= f.collection_select :tag_list, @tags, :name, :name, :class => 'form-control select-search chosen-select', :multiple => true, :size => '2', :prompt => "Seleccione una opción" %>
+          <%= f.select :tag_list,
+                       @tags.map { |t| [t.name, t.name] },
+                       { include_blank: true },
+                       { class: 'chosen-select', multiple: true, :data => {:placeholder => ' '} } %>
+        </div>
+        <%= f.error_span(:tag_list) %>
+      </div>
+
+      <!-- Hacemos un collection_select para poder tener un desplegable con users a seleccionar
+      (en este caso seleccionaremos por email). Lo que el show nos devolverá será la id del
+      user que hemos seleccionado -->
+      <div class="form-group">
+        <%= f.label :user, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10 aligner">
           <%= f.collection_select :user_id, @users, :id, :name, :class => 'form-control select-search' %>
-          <%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
-          <%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
+<%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
+<%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
           <% f.error_span(:user) %>
         </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :file, :class => 'control-label col-lg-2' %>
-      <div class="col-lg-10 aligner">
-        <%= f.file_field :document %>
       </div>
-  </div>
-  <br>
-  <div class="form-group">
-      <div class="col-lg-offset-2 col-lg-10">
-        <%= f.submit nil, :class => 'btn btn-default ' %>
-        <%= link_to t('.cancel', :default => t("helpers.links.cancel")), posts_path, :class => 'btn btn-default' %>
+      <div class="form-group">
+        <%= f.label :file, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10 aligner">
+          <%= f.file_field :document %>
+        </div>
       </div>
-  </div>
+      <br>
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <%= f.submit nil, :class => 'btn btn-default ' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")), posts_path, :class => 'btn btn-default' %>
+        </div>
+      </div>
 <% end %>
 </div>

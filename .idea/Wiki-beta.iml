@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
+  <component name="CompassSettings">
+    <option name="compassExecutableFilePath" value="$USER_HOME$/.rvm/gems/ruby-2.1.0@wiki-beta/gems/compass-1.0.3/bin/compass" />
+    <option name="compassSupportEnabled" value="true" />
+    <option name="importPaths">
+      <list>
+        <option value="$USER_HOME$/.rvm/gems/ruby-2.1.0@wiki-beta/gems/compass-core-1.0.3/stylesheets" />
+      </list>
+    </option>
+  </component>
   <component name="FacetManager">
     <facet type="RailsFacetType" name="Ruby on Rails">
       <configuration>
@@ -137,6 +146,8 @@
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.12.5, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v8.2.5, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="chosen-rails (v1.5.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="chunky_png (v1.3.6, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ckeditor (v4.1.6, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="climate_control (v0.0.3, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cocaine (v0.5.8, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
@@ -144,11 +155,16 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.10.0, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="commonjs (v0.2.7, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="compass (v1.0.3, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="compass-core (v1.0.3, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="compass-import-once (v1.0.5, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="compass-rails (v3.0.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v0.0.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.0.1, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.6.0, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.10, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="font-awesome-rails (v4.6.1.0, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.6, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
@@ -181,6 +197,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rails-i18n (v4.0.8, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.6, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v11.1.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.9.7, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.9.7, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.2, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ref (v2.0.0, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="request_store (v1.3.1, RVM: ruby-2.1.0 [wiki-beta]) [gem]" level="application" />

@@ -19,13 +19,18 @@ en:
       edit: "Edit"
       create_subtheme: "Create Subtheme"
       download: "Download"
+      search: 'Search'
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+      search: "Search %{model}"
+
     tags:
       edit: "Edit %{model}"
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+      search: "Search %{model}"
+

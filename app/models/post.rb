@@ -17,4 +17,9 @@ class Post < ActiveRecord::Base
   belongs_to :parent, class_name: 'Post', inverse_of: :children
   has_many :children, class_name: 'Post', foreign_key: :parent_id, inverse_of: :parent
 
+  def self.search(title, text)
+   # where("title LIKE ? OR text LIKE ? OR document LIKE ?", "%#{search}½", "%#{search}½", "%#{search}½")
+    where("title LIKE ? OR text LIKE ?", "%#{title}%", "%#{text}%")
+  end
+
 end

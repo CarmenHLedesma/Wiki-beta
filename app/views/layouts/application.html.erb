@@ -53,12 +53,17 @@
                 <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link'  %> |
                 <%= link_to 'Login', new_user_session_path, :class => 'navbar-link'  %>
               <% end %>
-      </div>
+         </div>
     </div>
   </div>
-</header>
+  </header>
 <%= render_navigation %>
   <%= yield %>
+
+<%#= form_tag(posts_path, :method => 'get', id: 'search-form') do %>
+    <%#= text_field_tag :search, params[:search, :title, :text, :document], placeholder: "Search Posts" %>
+    <%#= submit_tag "Search", :name => nil %>
+<%# end %>
 <!-- Javascripts
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

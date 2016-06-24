@@ -29,6 +29,7 @@ es:
       destroy: "Eliminar"
       confirm: "Confirmar"
       new: "Nuevo"
+      search: "Buscar"
     form:
       cancel: "Cancelar"
     edit:

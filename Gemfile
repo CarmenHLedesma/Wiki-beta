@@ -21,6 +21,11 @@ gem 'ckeditor', '4.1.6'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
+# chosen rails
+
+gem 'compass-rails'
+gem 'chosen-rails'
+
 #Authentication gem
 gem 'devise', '4.0.1'
 gem 'font-awesome-rails', '~> 4.6.1.0'

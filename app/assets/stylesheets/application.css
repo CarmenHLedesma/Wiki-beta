@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require twitter-bootstrap-static/fontawesome
+ *= require chosen-compass
 
  */
 
@@ -59,22 +60,6 @@ div.col-lg-12{
     padding-right: 75px;
 }
 
-/*
-.table, thead, tr, th {
-    padding: 8px 20px 8px 20px;
-    line-height: 2;
-    text-align: center;
-    width: 500px;
-}
-*/
-
-.table-responsive {
-    padding: 8px 20px 8px 20px;
-    line-height: 2;
-    text-align: center;
-    width: 500px;
-    margin-left: 80px;
-}
 /* btn */
 .btn-primary {
     color: #fff;
@@ -102,16 +87,6 @@ a.btn.btn-primary:hover {
 
 /* POST SHOW */
 
-/*
-div.post.body {
-    width: 70px;
-    text-align: left;
-    font-style:normal;
-    font-size: 14px;
-    margin-left: 70px;
-    margin-bottom: 20px;
-}
-*/
 .links {
     margin-left: 70px;
 }
@@ -149,12 +124,7 @@ div.form-post {
 .aligner {
     padding-top: 7px;
 }
-/*
-div.page-header {
-    margin-left: 110px;
-    margin-right: 40px;
 
-}*/
 /*USER*/
 
 div.page-body-user{
@@ -280,35 +250,6 @@ div.avatar {
     margin-top: -5px;
 }
 
-div.form-group-tag {
-    padding: 8px;
-    text-align: left;
-    font-style:normal;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-/*
-div.wiki_menu, h1, table {
-    padding: 8px;
-    text-align: left;
-    font-style:normal;
-    margin-left: 40px;
-    margin-bottom: 0px;
-    font-size: 30px;
-
-}
-
-table.link_list, tr, th, td {
-    padding: 5px;
-    text-align: left;
-    font-style: normal;
-    margin-left: 40px;
-    font-size: 16px;
-    color: black;
-    font-family: "Helvetica Neue", "Arial", sans-serif;
-}
-*/
 /* Tag cloud */
 #tag_cloud_container{ text-align:center; width: 300px; }
 #tag_cloud_item{ float: left; padding: 0px 10px 0px 10px; }
