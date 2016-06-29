@@ -113,6 +113,17 @@ div.form-post {
     padding: 0px 30px;
 }
 
+.subtheme.body {
+    text-align: left;
+    font-style:normal;
+    font-size: 14px;
+    margin-left: 150px;
+    margin-right: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 0px 30px;
+}
+
 .search-form {
     border: 0.5px solid lightgrey;
     margin: 10px;

@@ -51,12 +51,15 @@
   <% if @post.parent_id == nil %>
       <% @post.children.each do |subtheme| %>
       <div class="subtheme body">
-        <h3>Post hijo</h3>
+        <h3><%= @post.title %></h3>
           <label><%= t('activerecord.attributes.post.title') %>:</label>
           <label><%= subtheme.title %></label>
           </br>
           <label><%= t('activerecord.attributes.post.text') %>:</label>
           <label><%= raw(subtheme.text) %></label>
+          </br>
+          <label><%= t('activerecord.attributes.post.tag_list') %>:</label>
+          <label><%= raw(subtheme.tag_list) %></label>
           </br>
           <label><%= t('activerecord.attributes.user.name') %>:</label>
           <label><%= subtheme.user.name %></label>

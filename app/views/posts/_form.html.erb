@@ -19,7 +19,6 @@
           </div>
         </div>
     <% end %>
-
     <div class="form-post">
       <div class="form-group">
         <%= f.label :title, :class => 'control-label col-lg-2' %>
@@ -39,7 +38,6 @@
       <div class="form-group">
         <%= f.label :tag_list, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10">
-<%#= f.collection_select :tag_list, @tags, :name, :name, :class => 'form-control select-search chosen-select', :multiple => true, :size => '2', :prompt => "Seleccione una opción" %>
           <%= f.select :tag_list,
                        @tags.map { |t| [t.name, t.name] },
                        { include_blank: true },
@@ -47,16 +45,10 @@
         </div>
         <%= f.error_span(:tag_list) %>
       </div>
-
-      <!-- Hacemos un collection_select para poder tener un desplegable con users a seleccionar
-      (en este caso seleccionaremos por email). Lo que el show nos devolverá será la id del
-      user que hemos seleccionado -->
       <div class="form-group">
         <%= f.label :user, :class => 'control-label col-lg-2' %>
         <div class="col-lg-10 aligner">
           <%= f.collection_select :user_id, @users, :id, :name, :class => 'form-control select-search' %>
-<%#= f.select :user_id, options_for_select(@users.map {|user| [user.email, user.id]}, @post.user_id), include_blank: 'Selecciona una opción' %>
-<%#= select_tag 'users', options_from_collection_for_select(@users, 'id', 'name'), id: 'simple-example' %>
           <% f.error_span(:user) %>
         </div>
       </div>

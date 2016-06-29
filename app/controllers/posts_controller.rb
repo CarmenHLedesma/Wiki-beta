@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :new_child, :document_download, :pdf_read ]
+  before_action :tag_user, only: [:new, :new_child, :edit, ]
 
   # GET /posts
   # GET /posts.json
@@ -19,13 +20,9 @@ class PostsController < ApplicationController
 
   end
 
-  # añadimos user a nuestro controller (no es necesario crear un controlador nuevo con user)
-  # para poder añadir los select users en la vista
   # GET /posts/new
   def new
     @post = Post.new
-    @users = User.all
-    @tags = Tag.all
   end
 
   def new_child
@@ -33,8 +30,6 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.parent_id = @post_parent.id
     @post.user_id = @post_parent.user_id
-    @users = User.all
-    @tags = Tag.all
   end
 
   def show_child
@@ -47,8 +42,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @users = User.all
-    @tags = Tag.all
+
   end
 
   # POST /posts
@@ -56,11 +50,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @users = User.all
-    @category = Category.all
-    # añadimos aquí el current user y no en el index para que sea el usuario
-    # autenticado el que al crear el post vea todas sus creaciones. Si lo hiciéramos en
-    # el index sólo veríamos los posts del user y no los de todos los usuarios
-    # @posts.user = current_user
 
     if @post.save
       redirect_to :action =>'index'
@@ -129,11 +118,13 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
+  def tag_user
+    @users = User.all
+    @tags = Tag.all
+  end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    # params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :document, :file, :tag_li => [])
     params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :file, :document, :tag_list => [] )
-
   end
 end

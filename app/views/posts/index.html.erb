@@ -29,14 +29,14 @@
 
 <table id="tabla_listado" class="listado_posts">
   <thead>
-  <tr>
-    <th class="col15"><%= model_class.human_attribute_name(:title) %></th>
-    <th class="col15"><%= model_class.human_attribute_name(:tag) %></th>
-    <th class="col37"><%= model_class.human_attribute_name(:text) %></th>
-    <th class="col10"><%= model_class.human_attribute_name(:name) %></th>
-    <th class="col8"><%= model_class.human_attribute_name(:document)%></th>
-    <th class="col13"></th>
-  </tr>
+      <tr>
+        <th class="col15"><%= model_class.human_attribute_name(:title) %></th>
+        <th class="col15"><%= model_class.human_attribute_name(:tag) %></th>
+        <th class="col37"><%= model_class.human_attribute_name(:text) %></th>
+        <th class="col10"><%= model_class.human_attribute_name(:name) %></th>
+        <th class="col8"><%= model_class.human_attribute_name(:document)%></th>
+        <th class="col13"></th>
+      </tr>
   </thead>
   <tbody>
   <% if @posts.present? %>
@@ -55,7 +55,6 @@
             <td>
               <% if post.document_file_name.present? %>
                   <button type="button" class="btn btn-default btn-xs">
-                    <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
                     <%= image_tag("glyphicons-37-file.png", class: 'small-icon') %>
                   </button>
               <% end %>
