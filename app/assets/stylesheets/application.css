@@ -113,6 +113,15 @@ div.form-post {
     padding: 0px 30px;
 }
 
+.search-form {
+    border: 0.5px solid lightgrey;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    /*width: 500px;
+    display: inline;*/
+}
+
 .links {
     margin-left: 120px;
 }
@@ -296,12 +305,12 @@ td.sin_resultados {
     text-align: center;
 }
 
-#tabla_listado.listado_posts { width: 98%; }
-#tabla_listado.listado_posts th.col8 { width: 10%; min-width: 70px; }
-#tabla_listado.listado_posts th.col10 { width: 10%; min-width: 144px; }
-#tabla_listado.listado_posts th.col13 { width: 13%; min-width: 144px; }
-#tabla_listado.listado_posts th.col15 { width: 13%; min-width: 144px; }
-#tabla_listado.listado_posts th.col37 { width: 37%; min-width: 144px; }
+#tabla_listado.listado_posts { width: 100%; }
+/*#tabla_listado.listado_posts th.col8 { width: 10%; min-width: 70px; }*/
+/*#tabla_listado.listado_posts th.col10 { width: 10%; min-width: 144px; }*/
+/*#tabla_listado.listado_posts th.col13 { width: 13%; min-width: 144px; }*/
+/*#tabla_listado.listado_posts th.col15 { width: 13%; min-width: 144px; }*/
+/*#tabla_listado.listado_posts th.col37 { width: 37%; min-width: 144px; }*/
 
 #tabla_listado th, td { text-align: left; }
 

@@ -5,25 +5,13 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @tags = Tag.all
-    @users = User.all
-    @posts = Post.all.order('created_at DESC')
-      if params[:title] || params[:text] || params[:document]
-        @posts = Post.search(params[:title], params[:text], params[:document])
-      else
-        @posts = Post.all
-      end
+    # @users = User.all
+    if params[:title] or params[:text] or params[:document_file_name] or params[:tag_list]
+      @posts = Post.search(params[:title], params[:text],  params[:document_file_name], params[:tag_list])
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
-
-  # if params[:title] != nil
-  #   @posts = Post.search(params[:title])
-  # elsif  params[:text] != nil
-  #   @posts = Post.search(params[:text])
-  # else
-  #   @posts = Post.all
-  # end
-  #def mis_posts
-   # @posts = current_user.posts
-  #end
 
   # GET /posts/1
   # GET /posts/1.json
@@ -46,6 +34,7 @@ class PostsController < ApplicationController
     @post.parent_id = @post_parent.id
     @post.user_id = @post_parent.user_id
     @users = User.all
+    @tags = Tag.all
   end
 
   def show_child
@@ -136,13 +125,15 @@ class PostsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :document, :file, :tag_li => [])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    # params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :document, :file, :tag_li => [])
+    params.require(:post).permit(:title, :text, :user_id, :parent_id, :name, :file, :document, :tag_list => [] )
+
+  end
 end

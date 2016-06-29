@@ -7,6 +7,9 @@ en:
       post:
         one: 'Post'
         other: 'Posts'
+        title: "Title"
+        text: "Text"
+        tag_list: "Tags"
       tag:
         one: 'Tag'
         other: 'Tags'

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_filter :set_paper_trail_whodunnit
 
 
   #protect_from_forgery prepend: true
@@ -18,6 +19,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :avatar, :document) }
-   end
+  end
+
+  def set_paper_trail_whodunnit
+
+  end
 
 end

@@ -17,14 +17,57 @@ class Post < ActiveRecord::Base
   belongs_to :parent, class_name: 'Post', inverse_of: :children
   has_many :children, class_name: 'Post', foreign_key: :parent_id, inverse_of: :parent
 
-  def self.search(title, text, document)
-   # where("title LIKE ? OR text LIKE ? OR document LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
-    if :title != nil
-      where("title LIKE ?", "%#{title}%")
-    elsif :text != nil
-      where("text LIKE ?", "%#{text}%")
-    else
-      where("document LIKE ?", "%#{document}%")
+  scope :search, -> (title, text, document, tag_list) do
+    scope = self.all
+
+    if title.present?
+      scope = scope.where("title LIKE ?", "%#{title}%")
     end
+    if text.present?
+      scope = scope.where("text LIKE ?", "%#{text}%")
+    end
+    if document.present?
+      # scope = scope.where(document_file_name: document_file_name)
+      scope = scope.where("document_file_name IS NOT NULL")
+    end
+    if tag_list.present?
+      scope = scope.joins("LEFT JOIN taggings ON taggings.taggable_id = posts.id where taggings.taggable_type = 'Post' and taggings.tag_id = #{tag_list}")
+    end
+
+    return scope
   end
+
 end
+# def self.search(title, text, document, tag_list)
+#   # where("title LIKE ? OR text LIKE ? OR document LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+#   yo = self.all
+#
+#   if title.present?
+#     yo = yo.where("title LIKE ?", "%#{title}%")
+#   end
+#   if text.present?
+#     yo = yo.where("text LIKE ?", "%#{text}%")
+#   end
+#   if document.present?
+#     yo = yo.where("document IN ?", "#{document}")
+#   end
+#   if tag_list.present?
+#     yo = yo.joins("LEFT JOIN taggings ON taggings.taggable_id = posts.id where taggings.taggable_type = 'Post' and taggings.tag_id = #{tag_list}")
+#   end
+#
+#   return yo
+# end
+#if title.present?
+  #       where("title LIKE ?", "%#{title}%")
+  #     end
+  #     if text.present?
+  #       where("text LIKE ?", "%#{text}%")
+  #     end
+  #     if document_file_name.present?
+  #       where( document_file_name: document_file_name )
+  #     end
+  #     if tag_list.present?
+  #       joins("LEFT JOIN taggings ON taggings.taggable_id = posts.id where taggings.taggable_type = 'Post' and taggings.tag_id = #{tag_list}")
+  #     end
+  #
+  # end

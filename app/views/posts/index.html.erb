@@ -4,37 +4,26 @@
 
 <div class="search-form">
   <%= form_tag(@post, method: 'get') do %>
-          <%= label_tag :title %>
-          <%= text_field_tag :title  %>
 
-          <%= label_tag :text %>
-          <%= text_field_tag :text %>
+      <%= label_tag :title %>
+      <%= text_field_tag :title  %>
+      <br>
+      <%= label_tag :text %>
+      <%= text_field_tag :text %>
+      <br>
+      <%= label_tag :document_file_name %>
+      <%= check_box_tag 'document_file_name', true, false %>
+      <br>
+      <%= label_tag :tag_list %>
+      <%= select_tag :tag_list,
+           options_from_collection_for_select(@tags, 'id', 'name'),
+           { class: 'chosen-select', multiple: false, prompt: 'Elige una opción' } %>
+      <br>
+      <%= submit_tag :search %>
 
-          <%= submit_tag :search %>
-
-          <%= label_tag :document %>
-          <%= check_box_tag 'document', 'yes', true %>
-
-          <%= link_to t('.search', :default => t("helpers.links.search")),
-                posts_path(@post), :class => 'default' %>
-
-
-
-      <%#= if :title != nil && :text == nil %>
-          <%#= label_tag :title %>
-          <%#= text_field_tag :title  %>
-      <%#= elsif :title == nil && :text != nil %>
-          <%#= label_tag :text %>
-          <%#= text_field_tag :text %>
-      <%# end %>
-      <%#= link_to t('.search', :default => t("helpers.links.search")),
-                posts_path(@post), :class => 'default' %>
-
-      <%#= label_tag :text %>
-      <%#= text_field_tag :text %>
-
-      <%#= label_tag :document %>
-      <%#= check_box_tag 'file', 'yes', true %>
+      <%= link_to t('.search', :default => t("helpers.links.search")),
+            posts_path(@post), :class => 'btn btn-default btn-xs' %>
+      <br>
   <% end %>
 </div>
 
@@ -50,7 +39,7 @@
   </tr>
   </thead>
   <tbody>
-  <% if @posts != nil && @posts.size > 0 %>
+  <% if @posts.present? %>
       <% @posts.each do |post| %>
           <tr>
             <td><%= post.title %></td>
@@ -64,7 +53,7 @@
             </td>
             <td><%= post.user.name %></td>
             <td>
-              <% if post.document_file_name != nil %>
+              <% if post.document_file_name.present? %>
                   <button type="button" class="btn btn-default btn-xs">
                     <!--<span class="glyphicons glyphicons-paperclip"></span></button></td>-->
                     <%= image_tag("glyphicons-37-file.png", class: 'small-icon') %>

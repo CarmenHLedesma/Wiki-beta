@@ -30,6 +30,9 @@ en:
       confirm: "Confirm"
       new: "New"
       search: "Search"
+      title: "Title"
+      text: "Text"
+      tag_list: "Tags"
     form:
       cancel: "Cancel"
     edit:

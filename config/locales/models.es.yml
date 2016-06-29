@@ -7,6 +7,9 @@ es:
       post:
         one: 'Post'
         other: 'Posts'
+        title: "Título"
+        text: "Texto"
+        tag_list: "Tags"
       tag:
         one: 'Tag'
         other: 'Tags'
